@@ -1,0 +1,10 @@
+# Sicherheits-Netz: niemals versehentlich Sensibles committen
+*.env
+*.env.*
+*key*.txt
+*Key*.txt
+*teilnehmer*
+*Teilnehmer*
+node_modules/
+.DS_Store
+Thumbs.db
