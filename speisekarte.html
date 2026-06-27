@@ -1,879 +1,241 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Speiseplan Juni 2026 — Schulküche Markersdorf</title>
-  <meta name="description" content="Speiseplan Juni 2026 der Schulküche Markersdorf. Frisch gekocht für Schule, Kindergarten und Krippe. Mit Bestellabschnitt zum Ausdrucken und Ankreuzen.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Speiseplan · Schulküche Markersdorf</title>
+<meta name="description" content="Unser Speiseplan für Schulen und Kindergärten — jeden Tag zwei frisch gekochte Gerichte zur Wahl, eines davon vegetarisch." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=Fontdiner+Swanky&family=Spectral:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
 
-  <meta property="og:title" content="Speiseplan Juni 2026 — Schulküche Markersdorf">
-  <meta property="og:description" content="Was es im Juni bei uns gibt — Woche für Woche. Mit Bestellabschnitt zum Ankreuzen.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/bilder/speisekarte-header.jpg">
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%2344583a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' font-style='italic' text-anchor='middle' fill='%23bc9b62'%3ES%3C/text%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/chatbot.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%2344583a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia,serif%27 font-size=%2718%27 font-weight=%27700%27 font-style=%27italic%27 text-anchor=%27middle%27 fill=%27%23bc9b62%27%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/chatbot.css" />
 </head>
-<body>
+<body data-page="speiseplan">
 
-  <!-- --- NAVIGATION --- -->
-  <header class="nav fest" id="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Schulküche Markersdorf — Startseite"><img src="assets/bilder/schulkueche-logo.png" alt="Schulküche Markersdorf"></a>
-      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="speisekarte.html" class="aktiv">Speiseplan</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="stories.html">Stories</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <!-- TODO: URL anpassen, sobald die Eltern-App live ist (z.B. eltern.schulkueche-markersdorf.de) -->
-          <li><a href="https://eltern.schulkueche-markersdorf.de/" class="nav-eltern" title="Eltern-Bereich – Anmeldung, Abmeldung, Speiseplan, Rechnung">Eltern-Login</a></li>
-        </ul>
-      </nav>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Speiseplan</span>
+      <h1>Was diese Woche<br />auf den Teller kommt.</h1>
+      <p class="lead">Jeden Tag kochen wir zwei Gerichte zur Wahl — eines davon immer vegetarisch. Alles frisch zubereitet, mit Zutaten aus der Region. An- und Abmeldungen erledigst du bequem in der Eltern-App.</p>
     </div>
-  </header>
-
-  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
-
-  <main id="main">
-  <!-- --- SEITEN-HEADER --- -->
-  <section class="page-header">
-    <div class="container">
-      <span class="eyebrow">Speiseplan</span>
-      <h1>Was es im <em>Juni 2026</em> gibt.</h1>
-      <hr class="divider zentriert">
-      <p class="lead">
-        Frisch gekocht für Schule, Kindergarten und Krippe — Woche für Woche.
-        Unten findest du den Bestellabschnitt zum Ausdrucken und Ankreuzen.
-      </p>
-    </div>
-  </section>
-
-  <!-- --- TAGESPREISE --- -->
-  <section class="tagespreise">
-    <div class="container">
-      <div class="preis-karten reveal">
-        <div class="preis-karte">
-          <span class="eyebrow">Erwachsene</span>
-          <div class="preis-betrag">3,90&nbsp;€</div>
-          <p>pro Mittagessen</p>
-        </div>
-        <div class="preis-karte">
-          <span class="eyebrow">Kinder · Schule</span>
-          <div class="preis-betrag">3,30&nbsp;€</div>
-          <p>pro Mittagessen</p>
-        </div>
-        <div class="preis-karte">
-          <span class="eyebrow">Kindergarten &amp; Krippe</span>
-          <div class="preis-betrag">3,00&nbsp;€</div>
-          <p>pro Mittagessen</p>
-        </div>
-      </div>
-      <p class="preis-hinweis">
-        Fester Tagespreis — egal welches Gericht. Bei zwei Wahlessen einfach das gewünschte ankreuzen.
-      </p>
-    </div>
-  </section>
-
-  <!-- --- SPEISEPLAN-HINWEIS --- -->
-  <section class="plan-intro">
-    <div class="container zentriert">
-      <span class="eyebrow reveal">So funktioniert's</span>
-      <h2 class="reveal">Speiseplan &amp; <em>Bestellabschnitt</em></h2>
-      <hr class="divider zentriert reveal">
-      <p class="lead reveal">
-        Klick auf ein Gericht, um Allergene und Zusatzstoffe zu sehen.
-        Den Bestellabschnitt am Ende des Monats kannst du ausdrucken, ankreuzen und in der Schulküche abgeben.
-      </p>
-
-      <div class="download-zeile reveal">
-        <a class="btn btn-primary" href="assets/speiseplan/2026-06-speiseplan-markersdorf.pdf" download>Speiseplan als PDF</a>
-        <a class="btn btn-outline" href="assets/speiseplan/2026-06-speiseplan-markersdorf.xlsx" download>Speiseplan als Excel</a>
-      </div>
-      <p class="download-hinweis reveal">Original-Vorlage zum Drucken (identisch mit dem Aushang in der Schulküche).</p>
-    </div>
-  </section>
-
-  <!-- --- WOCHE 1 --- -->
-  <section class="speiseplan-woche">
-    <div class="container">
-      <div class="woche-kopf reveal">
-        <span class="eyebrow">1. Woche</span>
-        <h2>vom <em>1.6. – 5.6.2026</em></h2>
-        <hr class="divider">
-      </div>
-
-      <div class="woche-grid reveal">
-        <!-- Montag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Montag</span>
-            <span class="tag-datum">1.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Quarkkeulchen</strong>
-                <span class="opt-zusatz">mit Apfelmus</span>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="a,f">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Bratherring</strong>
-                <span class="opt-zusatz">mit Salzkartoffeln</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Dienstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Dienstag</span>
-            <span class="tag-datum">2.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="a,f,1,2">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Richards Wunsch</span>
-                <strong>Spirellis mit feinem Wurstgulasch</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mittwoch -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Mittwoch</span>
-            <span class="tag-datum">3.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Svens Wunsch</span>
-                <strong>Risi Bisi</strong>
-                <span class="opt-zusatz">Kräutersoße und gedünsteter Fisch</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Donnerstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Donnerstag</span>
-            <span class="tag-datum">4.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Gebratene Boulette mit Salzkartoffeln</strong>
-                <span class="opt-zusatz">dazu Gemüsesoße</span>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Gebratene Boulette mit Salzkartoffeln</strong>
-                <span class="opt-zusatz">dazu Lauchsoße</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Freitag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Freitag</span>
-            <span class="tag-datum">5.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="f">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Möhreneintopf</strong>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="f">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Erbseneintopf</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- --- WOCHE 2 --- -->
-  <section class="speiseplan-woche grau">
-    <div class="container">
-      <div class="woche-kopf reveal">
-        <span class="eyebrow">2. Woche</span>
-        <h2>vom <em>8.6. – 12.6.2026</em></h2>
-        <hr class="divider">
-      </div>
-
-      <div class="woche-grid reveal">
-        <!-- Montag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Montag</span>
-            <span class="tag-datum">8.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Grießbrei</strong>
-                <span class="opt-zusatz">dazu Erdbeeren</span>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Stangenspargel und Rinderzunge</strong>
-                <span class="opt-zusatz">mit Kartoffeln</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Dienstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Dienstag</span>
-            <span class="tag-datum">9.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Paulas Wunsch</span>
-                <strong>Kartoffelbrei, Sauerkraut und Bratwurst</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mittwoch -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Mittwoch</span>
-            <span class="tag-datum">10.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="f,c">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Pauls/Tills Wunsch</span>
-                <strong>Käseherzen mit Makkaronichips</strong>
-                <span class="opt-zusatz">und Tomatensoße</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Donnerstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Donnerstag</span>
-            <span class="tag-datum">11.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Eierragout</strong>
-                <span class="opt-zusatz">dazu Gold Marie</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Freitag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Freitag</span>
-            <span class="tag-datum">12.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Kohlrabieintopf</strong>
-                <span class="opt-zusatz">mit frischem Landbrot</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- --- WOCHE 3 --- -->
-  <section class="speiseplan-woche">
-    <div class="container">
-      <div class="woche-kopf reveal">
-        <span class="eyebrow">3. Woche</span>
-        <h2>vom <em>15.6. – 19.6.2026</em></h2>
-        <hr class="divider">
-      </div>
-
-      <div class="woche-grid reveal">
-        <!-- Montag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Montag</span>
-            <span class="tag-datum">15.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Laurins Wunsch</span>
-                <strong>Buchteln mit Vanillesoße</strong>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Kohlroulade mit Kartoffeln</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Dienstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Dienstag</span>
-            <span class="tag-datum">16.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="f,c">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Böhmisch Knödel</strong>
-                <span class="opt-zusatz">dazu Butterböhnchen und zarter Schweinebraten</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mittwoch -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Mittwoch</span>
-            <span class="tag-datum">17.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Bratkartoffeln mit Rührei</strong>
-                <span class="opt-zusatz">dazu Rahmgurkensalat</span>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Bratkartoffeln mit hausgemachter Sülze</strong>
-                <span class="opt-zusatz">dazu Rahmgurkensalat</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Donnerstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Donnerstag</span>
-            <span class="tag-datum">18.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Florians Wunsch</span>
-                <strong>Spaghetti Bolognese</strong>
-                <span class="opt-zusatz">natürlich mit Käse</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Freitag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Freitag</span>
-            <span class="tag-datum">19.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="f,c,1,2">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Bohneneintopf</strong>
-                <span class="opt-zusatz">mit Kasslerwürfel</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- --- WOCHE 4 --- -->
-  <section class="speiseplan-woche grau">
-    <div class="container">
-      <div class="woche-kopf reveal">
-        <span class="eyebrow">4. Woche</span>
-        <h2>vom <em>22.6. – 26.6.2026</em></h2>
-        <hr class="divider">
-      </div>
-
-      <div class="woche-grid reveal">
-        <!-- Montag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Montag</span>
-            <span class="tag-datum">22.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Lockis Wunsch</span>
-                <strong>Heidelbeerblinis</strong>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="f,c">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Schwäbische Maultaschen</strong>
-                <span class="opt-zusatz">mit Salat</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Dienstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Dienstag</span>
-            <span class="tag-datum">23.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="c,a">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Backfisch mit Kartoffelbrei</strong>
-                <span class="opt-zusatz">und Kopfsalat</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mittwoch -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Mittwoch</span>
-            <span class="tag-datum">24.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Gabelspaghetti mit Carbonarasoße</strong>
-              </div>
-            </li>
-            <li class="essen-option wunsch" data-allergene="f,b">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Luises Wunsch</span>
-                <strong>Gabelspaghetti mit Spinat und Lachssoße</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Donnerstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Donnerstag</span>
-            <span class="tag-datum">25.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="a,1,2">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Tim &amp; Bens Wunsch</span>
-                <strong>Currywurst mit Kartoffelbrei</strong>
-                <span class="opt-zusatz">und knackiger Salat</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Freitag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Freitag</span>
-            <span class="tag-datum">26.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Weißkrauteintopf</strong>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Bigos</strong>
-                <span class="opt-zusatz">polnischer Krauteintopf</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- --- WOCHE 5 --- -->
-  <section class="speiseplan-woche">
-    <div class="container">
-      <div class="woche-kopf reveal">
-        <span class="eyebrow">5. Woche</span>
-        <h2>vom <em>29.6. – 3.7.2026</em></h2>
-        <hr class="divider">
-      </div>
-
-      <div class="woche-grid reveal">
-        <!-- Montag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Montag</span>
-            <span class="tag-datum">29.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Buttermilchplinse</strong>
-                <span class="opt-zusatz">mit Himbeer-Apfelmus</span>
-              </div>
-            </li>
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">2</span>
-              <div class="opt-inhalt">
-                <strong>Mini Cordon bleu</strong>
-                <span class="opt-zusatz">mit Kartoffelecken und Zaziki</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Dienstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Dienstag</span>
-            <span class="tag-datum">30.6.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Kartoffelbrei mit Blumenkohl</strong>
-                <span class="opt-zusatz">und Kräuterrührei</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mittwoch -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Mittwoch</span>
-            <span class="tag-datum">1.7.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Kochklops in Dillsoße</strong>
-                <span class="opt-zusatz">mit Salzkartoffeln</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Donnerstag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Donnerstag</span>
-            <span class="tag-datum">2.7.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option wunsch" data-allergene="f,b">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Mathildas Wunsch</span>
-                <strong>Zarter Rindergulasch</strong>
-                <span class="opt-zusatz">mit Spätzle und Brokkoli</span>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Freitag -->
-        <div class="plan-tag">
-          <header class="plan-tag-kopf">
-            <span class="tag-name">Freitag</span>
-            <span class="tag-datum">3.7.</span>
-          </header>
-          <ol class="plan-essen">
-            <li class="essen-option" data-allergene="">
-              <span class="opt-nr">1</span>
-              <div class="opt-inhalt">
-                <strong>Gemüseeintopf</strong>
-              </div>
-            </li>
-            <li class="essen-option wunsch" data-allergene="">
-              <span class="opt-nr">★</span>
-              <div class="opt-inhalt">
-                <span class="wunsch-label">Michelles Wunsch</span>
-                <strong>Käse-Lauchsuppe</strong>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- --- MONATS-BESTELLABSCHNITT --- -->
-  <section class="speiseplan-woche bestellabschnitt-section">
-    <div class="container">
-      <div class="bestellabschnitt monats reveal" data-monat="2026-06">
-        <header class="abschnitt-kopf">
-          <span class="eyebrow">Zum Abgeben</span>
-          <h3>Bestellabschnitt · Juni 2026</h3>
-          <p>Bitte gewünschtes Essen pro Tag ankreuzen, einmal unterschreiben und in der Schulküche abgeben.</p>
-        </header>
-        <div class="abschnitt-felder felder-breit">
-          <label><span>Name</span><span class="schreibfeld"></span></label>
-          <label><span>Klasse / Gruppe</span><span class="schreibfeld"></span></label>
-          <label><span>Unterschrift</span><span class="schreibfeld"></span></label>
-        </div>
-        <table class="abschnitt-tabelle monats-tabelle">
-          <thead>
-            <tr>
-              <th>Tag</th>
-              <th>Datum</th>
-              <th>1. Essen</th>
-              <th>2. Essen</th>
-              <th>Kein Essen</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="woche-trenner"><td colspan="5">1. Woche · 1.6. – 5.6.2026</td></tr>
-            <tr><td>Mo</td><td>1.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Di</td><td>2.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Mi</td><td>3.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Do</td><td>4.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Fr</td><td>5.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-
-            <tr class="woche-trenner"><td colspan="5">2. Woche · 8.6. – 12.6.2026</td></tr>
-            <tr><td>Mo</td><td>8.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Di</td><td>9.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Mi</td><td>10.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Do</td><td>11.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Fr</td><td>12.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-
-            <tr class="woche-trenner"><td colspan="5">3. Woche · 15.6. – 19.6.2026</td></tr>
-            <tr><td>Mo</td><td>15.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Di</td><td>16.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Mi</td><td>17.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Do</td><td>18.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Fr</td><td>19.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-
-            <tr class="woche-trenner"><td colspan="5">4. Woche · 22.6. – 26.6.2026</td></tr>
-            <tr><td>Mo</td><td>22.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Di</td><td>23.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Mi</td><td>24.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Do</td><td>25.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Fr</td><td>26.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-
-            <tr class="woche-trenner"><td colspan="5">5. Woche · 29.6. – 3.7.2026</td></tr>
-            <tr><td>Mo</td><td>29.6.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-            <tr><td>Di</td><td>30.6.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Mi</td><td>1.7.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Do</td><td>2.7.</td><td><span class="kasten"></span></td><td class="leer">—</td><td><span class="kasten"></span></td></tr>
-            <tr><td>Fr</td><td>3.7.</td><td><span class="kasten"></span></td><td><span class="kasten"></span></td><td><span class="kasten"></span></td></tr>
-          </tbody>
-        </table>
-        <p class="abschnitt-deadline">
-          Bitte den Bestellabschnitt für den Folgemonat bis spätestens <strong>29.6.2026</strong> zurücksenden.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- --- LEGENDE & HINWEISE --- -->
-  <section class="legende-section">
-    <div class="container">
-      <div class="legende-grid reveal">
-        <div class="legende-karte">
-          <span class="eyebrow">Allergene</span>
-          <h3>Möglich enthaltene Allergene</h3>
-          <hr class="divider">
-          <ul class="legende-liste">
-            <li><span class="legende-code">a</span> Milch</li>
-            <li><span class="legende-code">b</span> Spuren von Ei</li>
-            <li><span class="legende-code">c</span> Sellerie</li>
-            <li><span class="legende-code">d</span> Soja</li>
-            <li><span class="legende-code">e</span> Nüsse</li>
-            <li><span class="legende-code">f</span> Gluten (Weizenmehl)</li>
-          </ul>
-        </div>
-
-        <div class="legende-karte">
-          <span class="eyebrow">Zusatzstoffe</span>
-          <h3>Enthaltene Zusatzstoffe</h3>
-          <hr class="divider">
-          <ul class="legende-liste">
-            <li><span class="legende-code zusatz">1</span> Konservierungsstoffe</li>
-            <li><span class="legende-code zusatz">2</span> Geschmacksverstärker</li>
-            <li><span class="legende-code zusatz">3</span> Farbstoffe</li>
-            <li><span class="legende-code zusatz">4</span> Süßungsmittel</li>
-            <li><span class="legende-code zusatz">5</span> Phosphat</li>
-          </ul>
-        </div>
-
-        <div class="legende-karte">
-          <span class="eyebrow">Bestellen &amp; Abmelden</span>
-          <h3>So erreichst du uns</h3>
-          <hr class="divider">
-          <ul class="legende-kontakt">
-            <li><strong>Telefon:</strong> <a href="tel:+4935829139993">035829 / 139993</a></li>
-            <li><strong>E-Mail:</strong> <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a></li>
-          </ul>
-          <p class="legende-hinweis">
-            <strong>Abmeldungen</strong> bitte täglich bis 08:00 Uhr, sonst müssen wir die Tage berechnen.<br>
-            <strong>Bestellungen</strong> nehmen wir ebenfalls bis 08:00 Uhr entgegen.
-          </p>
-          <p class="legende-hinweis aenderung">Änderungen vorbehalten.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- --- DRUCK / DOWNLOAD --- -->
-  <section class="cta">
-    <div class="container">
-      <span class="eyebrow">Ausdrucken &amp; abgeben</span>
-      <h2>Speiseplan zum <em>Drucken</em></h2>
-      <hr class="divider zentriert">
-      <p class="lead">
-        Lade dir die Original-Vorlage herunter — als PDF oder Excel. Drucken, ankreuzen, in der Schulküche abgeben.
-      </p>
-      <div class="hero-buttons">
-        <a class="btn btn-light" href="assets/speiseplan/2026-06-speiseplan-markersdorf.pdf" target="_blank" rel="noopener">PDF öffnen</a>
-        <a class="btn btn-light" href="assets/speiseplan/2026-06-speiseplan-markersdorf.xlsx" download>Excel herunterladen</a>
-      </div>
-      <p class="cta-hinweis">Beide Dateien zeigen 1:1 die Original-Vorlage der Schulküche — gleiche Tabelle wie der Aushang.</p>
-    </div>
-  </section>
-  </main>
-
-  <!-- --- ALLERGEN-POPOVER (wird von JS gefüllt) --- -->
-  <div id="allergen-popover" class="allergen-popover" role="dialog" aria-hidden="true">
-    <button type="button" class="popover-close" aria-label="Schließen">×</button>
-    <div class="popover-inner"></div>
   </div>
+</section>
 
-  <!-- --- FOOTER --- -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-logo">Schulküche <span>Markersdorf</span></div>
-          <p style="font-size:0.92rem; line-height:1.7;">
-            Frisch gekocht für Schule, Kindergarten und Krippe.
-          </p>
-        </div>
-        <div>
-          <h4>Seiten</h4>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="speisekarte.html">Speiseplan</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="stories.html">Stories</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Bestellen</h4>
-          <ul>
-            <li>Tel: 035829 / 139993</li>
-            <li>bis 08:00 Uhr täglich</li>
-            <li style="margin-top:0.8rem; color:rgba(255,255,255,0.5);">Abmeldungen bis 08:00 Uhr</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Folge uns</h4>
-          <ul>
-            <li><a href="https://www.facebook.com/schulkuche.markersdorf.7" target="_blank" rel="noopener">Facebook ↗</a></li>
-            <li><a href="https://www.instagram.com/schulkueche_markersdorf/" target="_blank" rel="noopener">Instagram ↗</a></li>
-            <li><a href="mailto:schulkuechemarkersdorf@web.de">E-Mail</a></li>
-          </ul>
-        </div>
+<section class="section cream">
+  <div class="wrap">
+
+    <!-- Woche 1 -->
+    <div class="week-block reveal">
+      <div class="week-label">
+        <b>Diese Woche</b><span class="line"></span><span class="chip">23.–27. Juni</span>
       </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Schulküche Markersdorf · Alle Rechte vorbehalten</span>
-        <span>
-          <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
-          <a href="datenschutz.html">Datenschutz</a>
-        </span>
+      <div class="menu-grid">
+        <div class="menu-day">
+          <div class="dh"><b>Montag</b><span class="date">23.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Sächsische Kartoffelsuppe</div><div class="meal-desc">mit Wiener Würstchen &amp; Brot</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Sellerie</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Gemüsemaultaschen</div><div class="meal-desc">in heller Soße · vegetarisch</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Ei</span><span class="alg">Milch</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Dienstag</b><span class="date">24.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Spaghetti Bolognese</div><div class="meal-desc">mit Rinderhack &amp; Käse</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Milch</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Spaghetti Napoli</div><div class="meal-desc">Tomatensoße · vegetarisch</div><div class="allergens"><span class="alg">Gluten</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Mittwoch</b><span class="date">25.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Sauerbraten</div><div class="meal-desc">mit Klößen &amp; Apfelrotkohl</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Sellerie</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Kartoffelgratin</div><div class="meal-desc">mit Brokkoli · vegetarisch</div><div class="allergens"><span class="alg">Milch</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Donnerstag</b><span class="date">26.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Hähnchenschnitzel</div><div class="meal-desc">mit Erbsen, Möhren &amp; Salzkartoffeln</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Ei</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Milchreis</div><div class="meal-desc">mit Apfelmus &amp; Zimt</div><div class="allergens"><span class="alg">Milch</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Freitag</b><span class="date">27.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Quarkkäulchen</div><div class="meal-desc">mit Apfelmus — frisch gebacken</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Ei</span><span class="alg">Milch</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Fischstäbchen</div><div class="meal-desc">mit Kartoffelpüree &amp; Gurkensalat</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Fisch</span></div></div>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <script src="assets/script.js"></script>
-  <script src="assets/speiseplan.js"></script>
+    <!-- Woche 2 -->
+    <div class="week-block reveal">
+      <div class="week-label">
+        <b>Nächste Woche</b><span class="line"></span><span class="chip">30. Juni – 4. Juli</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-day">
+          <div class="dh"><b>Montag</b><span class="date">30.06.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Rinderroulade</div><div class="meal-desc">mit Rotkohl &amp; Klößen</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Senf</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Gemüseauflauf</div><div class="meal-desc">mit Kräuterquark · vegetarisch</div><div class="allergens"><span class="alg">Milch</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Dienstag</b><span class="date">01.07.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Jägerschnitzel</div><div class="meal-desc">mit Tomatensoße &amp; Nudeln</div><div class="allergens"><span class="alg">Gluten</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Linseneintopf</div><div class="meal-desc">mit Brot · vegetarisch</div><div class="allergens"><span class="alg">Sellerie</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Mittwoch</b><span class="date">02.07.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Soljanka</div><div class="meal-desc">deftig, mit Brot</div><div class="allergens"><span class="alg">Sellerie</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Kartoffelpuffer</div><div class="meal-desc">mit Apfelmus · vegetarisch</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Ei</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Donnerstag</b><span class="date">03.07.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Wickelklöße</div><div class="meal-desc">mit Schweinebraten &amp; Soße</div><div class="allergens"><span class="alg">Gluten</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Grießbrei</div><div class="meal-desc">mit warmen Kirschen · vegetarisch</div><div class="allergens"><span class="alg">Milch</span></div></div>
+        </div>
+        <div class="menu-day">
+          <div class="dh"><b>Freitag</b><span class="date">04.07.</span></div>
+          <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Backfisch</div><div class="meal-desc">mit Kartoffelsalat</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Fisch</span></div></div>
+          <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Eierkuchen</div><div class="meal-desc">mit Apfelmus &amp; Zucker · vegetarisch</div><div class="allergens"><span class="alg">Gluten</span><span class="alg">Ei</span><span class="alg">Milch</span></div></div>
+        </div>
+      </div>
+    </div>
 
-  <!-- --- CHATBOT --- -->
-  <script>
-    window.SK_CHAT_CONFIG = {
-      workerUrl: 'https://schulkueche-chatbot.sven-lng19.workers.dev',
-      datenschutzUrl: 'datenschutz.html'
-    };
-  </script>
-  <script defer src="assets/chatbot.js"></script>
+    <div class="note reveal" style="margin-top:42px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <span>Dein Kind ist krank? In der Eltern-App meldest du es mit einem Tipp vom Essen ab — bis 7:30 Uhr am selben Tag. Allergien und Unverträglichkeiten hinterlegst du einmalig, wir berücksichtigen sie bei jeder Bestellung.</span>
+    </div>
+
+    <div class="reveal" style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn btn-primary btn-lg" href="https://eltern.schulküchemarkersdorf.de/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg> Essen an-/abmelden</a>
+      <a class="btn btn-ghost btn-lg" href="kontakt.html">Fragen zum Speiseplan?</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Preise
+     ============================================================ -->
+<section class="section beige">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.2a3.5 3.5 0 1 0 0 5.6M8 11h5M8 13h5"/></svg> Preise</span>
+      <h2>Was ein Mittagessen kostet.</h2>
+      <p class="lead">Faire Preise für frisch gekochtes Essen — gestaffelt nach Einrichtung. Die Abrechnung läuft bequem und transparent über die Eltern-App.</p>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:8px">
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:28px 24px;text-align:center">
+        <div style="font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--apple-dk)">Kinderkrippe</div>
+        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--forest);line-height:1;margin-top:12px;font-variant-numeric:tabular-nums">3,00&nbsp;€</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">pro Mittagessen</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:28px 24px;text-align:center">
+        <div style="font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--apple-dk)">Kindergarten</div>
+        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--forest);line-height:1;margin-top:12px;font-variant-numeric:tabular-nums">3,30&nbsp;€</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">pro Mittagessen</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:28px 24px;text-align:center">
+        <div style="font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--apple-dk)">Kinder · Schule</div>
+        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--forest);line-height:1;margin-top:12px;font-variant-numeric:tabular-nums">4,20&nbsp;€</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">pro Mittagessen</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm);padding:28px 24px;text-align:center">
+        <div style="font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--apple-dk)">Erwachsene</div>
+        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--forest);line-height:1;margin-top:12px;font-variant-numeric:tabular-nums">5,80&nbsp;€</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">pro Mittagessen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Download · PDF / Excel (Original-Aushang der Schulküche)
+     ============================================================ -->
+<section class="section beige no-print">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg> Ausdrucken &amp; abgeben</span>
+      <h2>Speiseplan zum Mitnehmen.</h2>
+      <p class="lead">Lade dir die Original-Vorlage herunter — als PDF oder Excel. Drucken, ankreuzen, in der Schulküche abgeben. Beide Dateien zeigen 1:1 den Aushang.</p>
+    </div>
+    <div class="dl-row reveal" style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+      <a class="btn btn-primary btn-lg" href="assets/speiseplan/2026-06-speiseplan-markersdorf.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5M6 2h9l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/></svg>
+        Speiseplan als PDF
+      </a>
+      <a class="btn btn-ghost btn-lg" href="assets/speiseplan/2026-06-speiseplan-markersdorf.xlsx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5M6 2h9l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="m9 13 6 5M15 13l-6 5"/></svg>
+        Speiseplan als Excel
+      </a>
+      <button class="btn btn-ghost btn-lg" type="button" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v8H6Z"/></svg>
+        Bestellabschnitt drucken
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Bestellabschnitt · zum Ausdrucken & Abgeben
+     ============================================================ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="order-slip reveal">
+      <div class="section-head" style="text-align:left">
+        <span class="eyebrow">Zum Abgeben</span>
+        <h2>Bestellabschnitt · Juni 2026</h2>
+        <p class="lead">Bitte gewünschtes Essen pro Tag ankreuzen, einmal unterschreiben und in der Schulküche abgeben.</p>
+      </div>
+      <div class="slip-fields">
+        <label><span>Name</span><span class="slip-line"></span></label>
+        <label><span>Klasse / Gruppe</span><span class="slip-line"></span></label>
+        <label><span>Unterschrift</span><span class="slip-line"></span></label>
+      </div>
+      <table class="slip-table">
+        <thead>
+          <tr><th>Tag</th><th>Datum</th><th>1. Essen</th><th>2. Essen</th><th>Kein Essen</th></tr>
+        </thead>
+        <tbody>
+          <tr class="slip-week"><td colspan="5">1. Woche · 1.6. – 5.6.2026</td></tr>
+          <tr><td>Mo</td><td>1.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Di</td><td>2.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Mi</td><td>3.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Do</td><td>4.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Fr</td><td>5.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr class="slip-week"><td colspan="5">2. Woche · 8.6. – 12.6.2026</td></tr>
+          <tr><td>Mo</td><td>8.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Di</td><td>9.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Mi</td><td>10.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Do</td><td>11.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Fr</td><td>12.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr class="slip-week"><td colspan="5">3. Woche · 15.6. – 19.6.2026</td></tr>
+          <tr><td>Mo</td><td>15.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Di</td><td>16.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Mi</td><td>17.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Do</td><td>18.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Fr</td><td>19.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr class="slip-week"><td colspan="5">4. Woche · 22.6. – 26.6.2026</td></tr>
+          <tr><td>Mo</td><td>22.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Di</td><td>23.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Mi</td><td>24.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Do</td><td>25.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Fr</td><td>26.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr class="slip-week"><td colspan="5">5. Woche · 29.6. – 3.7.2026</td></tr>
+          <tr><td>Mo</td><td>29.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Di</td><td>30.6.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Mi</td><td>1.7.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Do</td><td>2.7.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+          <tr><td>Fr</td><td>3.7.</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr>
+        </tbody>
+      </table>
+      <p class="slip-deadline">Bitte den Bestellabschnitt für den Folgemonat bis spätestens <strong>29.6.2026</strong> zurücksenden. <strong>Abmeldungen</strong> täglich bis 08:00 Uhr, sonst müssen wir die Tage berechnen.</p>
+    </div>
+  </div>
+</section>
+
+<script src="site.js"></script>
+<script>
+  window.SK_CHAT_CONFIG = {
+    workerUrl: "https://schulkueche-chatbot.sven-lng19.workers.dev",
+    datenschutzUrl: "datenschutz.html"
+  };
+</script>
+<script defer src="assets/chatbot.js"></script>
 </body>
 </html>

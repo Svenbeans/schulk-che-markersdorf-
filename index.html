@@ -1,443 +1,225 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schulküche Markersdorf — Frisch gekocht für unsere Kinder</title>
-  <meta name="description" content="Schulküche Markersdorf: Frisch gekochtes Mittagessen für Schule, Kindergarten und Krippe. Aktueller Speiseplan, Bestellabschnitt zum Drucken, fester Tagespreis.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Schulküche Markersdorf · Frisch gekocht für eure Kinder</title>
+<meta name="description" content="Frisch gekochtes Mittagessen für Schulen und Kindergärten in und um Markersdorf — regional, kindgerecht, jeden Tag mit Liebe zubereitet." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=Fontdiner+Swanky&family=Spectral:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
 
-  <meta property="og:title" content="Schulküche Markersdorf — Frisch gekocht für unsere Kinder">
-  <meta property="og:description" content="Frisch gekochtes Mittagessen für Schule, Kindergarten und Krippe in Markersdorf.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://schulkueche-markersdorf.de/">
-  <meta property="og:image" content="assets/bilder/hero-startseite.jpg">
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%2344583a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' font-style='italic' text-anchor='middle' fill='%23bc9b62'%3ES%3C/text%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/chatbot.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%2344583a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia,serif%27 font-size=%2718%27 font-weight=%27700%27 font-style=%27italic%27 text-anchor=%27middle%27 fill=%27%23bc9b62%27%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/chatbot.css" />
 </head>
-<body>
+<body class="has-hero" data-page="start">
 
-  <!-- --- NAVIGATION --- -->
-  <header class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Schulküche Markersdorf — Startseite"><img src="assets/bilder/schulkueche-logo.png" alt="Schulküche Markersdorf"></a>
-      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html" class="aktiv">Start</a></li>
-          <li><a href="speisekarte.html">Speiseplan</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="stories.html">Stories</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <!-- TODO: URL anpassen, sobald die Eltern-App live ist (z.B. eltern.schulkueche-markersdorf.de) -->
-          <li><a href="https://eltern.schulkueche-markersdorf.de/" class="nav-eltern" title="Eltern-Bereich – Anmeldung, Abmeldung, Speiseplan, Rechnung">Eltern-Login</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
-
-  <main id="main">
-
-  <!-- --- HERO VOLLBILD --- -->
-  <section class="hero-vollbild">
-    <div class="hero-bg">
-      <div class="platzhalter" aria-hidden="true">
-        <span class="ph-emoji">🏡</span>
-      </div>
-      <img src="assets/bilder/hero-startseite.jpg" alt="Außenansicht der Schulküche Markersdorf in der goldenen Stunde" fetchpriority="high" onerror="this.remove();">
-    </div>
-    <div class="hero-inner">
-      <span class="eyebrow">Schulküche · Markersdorf</span>
-      <h1>Frisch gekocht — <em>für unsere Kinder.</em></h1>
-      <p class="hero-lead">
-        Mittagessen für Schule, Kindergarten und Krippe. Jeden Tag warm, hausgemacht und herzlich serviert.
-      </p>
-      <p class="hero-reichweite">
-        Für die <strong>Grundschule Markersdorf</strong> und die Kindergärten in Markersdorf, Friedersdorf und Jauernick.
-      </p>
-      <div class="hero-buttons">
-        <a href="speisekarte.html" class="btn btn-light">Speiseplan ansehen</a>
-        <a href="kontakt.html" class="btn btn-light">Kontakt</a>
-      </div>
-      <a href="tel:035829139993" class="hero-tel" aria-label="Anrufen: 0 35829 13 99 93">
-        <span aria-hidden="true">📞</span> 035829 / 139993
-      </a>
-    </div>
-    <span class="hero-scroll">↓ Mehr erfahren</span>
-  </section>
-
-  <!-- --- FEATURES --- -->
-  <section class="features">
-    <div class="container zentriert">
-      <span class="eyebrow reveal">Was uns ausmacht</span>
-      <h2 class="reveal">Eine Küche, in der du <em>spürst</em>, dass es jemandem wichtig ist.</h2>
-      <hr class="divider zentriert reveal">
-
-      <div class="features-grid">
-        <div class="feature reveal">
-          <div class="feature-icon" aria-hidden="true">🌿</div>
-          <h3>Regional &amp; saisonal</h3>
-          <p>Zutaten aus der Umgebung. So frisch wie möglich. So nah wie möglich.</p>
-        </div>
-        <div class="feature reveal">
-          <div class="feature-icon" aria-hidden="true">👩‍🍳</div>
-          <h3>Mit Herz gekocht</h3>
-          <p>Hausgemacht nach bewährten Rezepten. Tag für Tag. Ohne Abkürzungen.</p>
-        </div>
-        <div class="feature reveal">
-          <div class="feature-icon" aria-hidden="true">🥗</div>
-          <h3>Für jeden etwas</h3>
-          <p>Täglich 1. &amp; 2. Wahlessen — meist eine fleisch- und eine vegetarische Variante.</p>
-        </div>
-        <div class="feature reveal">
-          <div class="feature-icon" aria-hidden="true">💶</div>
-          <h3>Fester Tagespreis</h3>
-          <p>Ein Mittagessen, ein Preis — egal welches Gericht. Klar und planbar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- --- FULL-BLEED KÜCHEN-IMPRESSION --- -->
-  <div class="container">
-    <section class="bild-full-bleed reveal" aria-label="Einblick in unsere Küche">
-      <div class="bild-slot">
-        <div class="platzhalter" aria-hidden="true">
-          <span class="ph-emoji">🍳</span>
-          <span class="ph-caption">Atmosphärischer Kücheneinblick · 21:9</span>
-        </div>
-        <img src="assets/bilder/full-bleed-kuche.jpg" alt="Hand beim Schneiden in der Küche der Schulküche Markersdorf" loading="lazy" onerror="this.remove();">
-      </div>
-      <div class="bild-caption">Mittendrin — nicht nur dabei.</div>
-    </section>
+<!-- ============================================================
+     HERO · gepinnte Canvas-Bühne (Apple-Mac-Studio-Mechanik)
+     ============================================================ -->
+<section class="hero hero-static">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/bilder/hero-startseite.jpg" alt="" fetchpriority="high" onerror="this.remove();" />
   </div>
-
-  <!-- --- WOCHENPLAN MO–FR --- -->
-  <!--
-    PFLEGE-HINWEIS:
-    Diese fünf <div class="wochenplan-tag"> sind das, was du wöchentlich austauschst.
-    Pro Tag: .tag-name = der Wochentag, .tag-gericht = das Hauptgericht,
-    .tag-beilage = Beilage / kurze Beschreibung. Alles andere bleibt.
-    Den vollen Monatsplan pflegst du auf speisekarte.html.
-  -->
-  <section class="wochenplan">
-    <div class="container zentriert">
-      <span class="eyebrow reveal">Diese Woche · 1.6. – 5.6.2026</span>
-      <h2 class="reveal">Unser <em>Wochenplan</em></h2>
-      <hr class="divider zentriert reveal">
-      <p class="lead reveal">
-        Was diese Woche täglich aus der Küche kommt. Den vollständigen Monatsplan und den Bestellabschnitt findest du auf der Speiseplan-Seite.
-      </p>
-
-      <div class="wochenplan-grid reveal">
-        <div class="wochenplan-tag">
-          <span class="tag-name">Mo · 1.6.</span>
-          <div class="tag-gericht">Quarkkeulchen mit Apfelmus</div>
-          <div class="tag-beilage">oder Bratherring mit Salzkartoffeln</div>
-        </div>
-        <div class="wochenplan-tag">
-          <span class="tag-name">Di · 2.6.</span>
-          <div class="tag-gericht">Spirellis mit Wurstgulasch</div>
-          <div class="tag-beilage">Richards Wunsch</div>
-        </div>
-        <div class="wochenplan-tag">
-          <span class="tag-name">Mi · 3.6.</span>
-          <div class="tag-gericht">Risi Bisi mit Fisch</div>
-          <div class="tag-beilage">Svens Wunsch · mit Kräutersoße</div>
-        </div>
-        <div class="wochenplan-tag">
-          <span class="tag-name">Do · 4.6.</span>
-          <div class="tag-gericht">Boulette mit Salzkartoffeln</div>
-          <div class="tag-beilage">dazu Gemüsesoße oder Lauchsoße</div>
-        </div>
-        <div class="wochenplan-tag">
-          <span class="tag-name">Fr · 5.6.</span>
-          <div class="tag-gericht">Möhren- oder Erbseneintopf</div>
-          <div class="tag-beilage">deftig &amp; warm</div>
-        </div>
-      </div>
-
-      <p class="wochenplan-hinweis">
-        Änderungen vorbehalten — den vollständigen Speiseplan inkl. Allergenen findest du <a href="speisekarte.html">hier</a>.
-      </p>
+  <div class="hero-content">
+    <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18"/><path d="M5 9v7a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V9"/><path d="M2 9h2M20 9h2"/><path d="M9 5.5c.7-.7.5-1.5 0-2.2M13.5 5.5c.7-.7.5-1.5 0-2.2"/></svg> Schulküche Markersdorf</span>
+    <h1>Frisch gekocht.<br />Für eure Kinder.</h1>
+    <p class="lead">Jeden Tag ein warmes Mittagessen für Schulen und Kindergärten in und um Markersdorf — regional, ausgewogen und mit Liebe zubereitet.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="speisekarte.html">Speiseplan ansehen</a>
+      <a class="btn btn-ghost btn-lg" href="https://eltern.schulküchemarkersdorf.de/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg> Eltern-App</a>
     </div>
-  </section>
-
-  <!-- --- TAGESPREIS-TEASER (Bild + Preise) --- -->
-  <section class="menu-teaser">
-    <div class="container">
-      <div class="menu-teaser-inner">
-        <div class="menu-teaser-bild foto reveal">
-          <div class="bild-slot ratio-4-5">
-            <div class="platzhalter" aria-hidden="true">
-              <span class="ph-emoji">🍽️</span>
-              <span class="ph-caption">Tagesteller · 4:5 · von oben fotografiert</span>
-            </div>
-            <img src="assets/bilder/wochenmenu-teller.jpg" alt="Frisch angerichteter Tagesteller aus der Schulküche Markersdorf" loading="lazy" onerror="this.remove();">
-          </div>
-        </div>
-        <div class="reveal">
-          <span class="eyebrow">Fester Tagespreis</span>
-          <h2>Ein <em>Mittagessen</em>, ein Preis</h2>
-          <hr class="divider">
-          <p class="lead">
-            Bei uns kostet jeder Tag gleich viel — egal welches Gericht. Was es täglich gibt,
-            steht im Speiseplan.
-          </p>
-
-          <div class="preis-karten preis-karten-kompakt">
-            <div class="preis-karte">
-              <span class="eyebrow">Erwachsene</span>
-              <div class="preis-betrag">3,90&nbsp;€</div>
-              <p>pro Mittagessen</p>
-            </div>
-            <div class="preis-karte preis-karte-hervor">
-              <span class="eyebrow">Kinder · Schule</span>
-              <div class="preis-betrag">3,30&nbsp;€</div>
-              <p>pro Mittagessen</p>
-            </div>
-            <div class="preis-karte">
-              <span class="eyebrow">Kindergarten &amp; Krippe</span>
-              <div class="preis-betrag">3,00&nbsp;€</div>
-              <p>pro Mittagessen</p>
-            </div>
-          </div>
-
-          <a href="speisekarte.html" class="btn btn-outline">Zum Speiseplan</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- --- BILD-ZITAT OVERLAY --- -->
-  <div class="container">
-    <section class="bild-zitat reveal" aria-label="Unser Versprechen">
-      <div class="zitat-bg">
-        <div class="bild-slot">
-          <div class="platzhalter" aria-hidden="true">
-            <span class="ph-emoji">🍞</span>
-            <span class="ph-caption">Ruhiges Detail · Brot, Mehl, Hände am Teig · 16:9</span>
-          </div>
-          <img src="assets/bilder/zitat-brot.jpg" alt="Hände beim Teigkneten – Detail aus der Schulküche Markersdorf" loading="lazy" onerror="this.remove();">
-        </div>
-      </div>
-      <div class="zitat-inner">
-        <blockquote>
-          Mittagessen wie zuhause — jeden Tag.
-        </blockquote>
-        <cite>Unser Versprechen</cite>
-      </div>
-    </section>
   </div>
+</section>
 
-  <!-- --- ÜBER UNS --- -->
-  <section class="ueber">
-    <div class="container">
-      <div class="ueber-inner ohne-bild">
-        <div class="ueber-text reveal">
-          <span class="eyebrow">Über uns</span>
-          <h2>Eine Küche, gewachsen aus <em>Herzblut</em>.</h2>
-          <hr class="divider">
-          <p>
-            Die Schulküche Markersdorf kocht jeden Tag frisch — direkt aus der <strong>Kirchstraße 49</strong>,
-            Tür an Tür mit der Grundschule. Für die Kinder hier vor Ort und in den Kindergärten
-            in Markersdorf, Friedersdorf und Jauernick.
-          </p>
+<!-- ============================================================
+     BÜHNE · Was uns ausmacht
+     ============================================================ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Was uns ausmacht</span>
+      <h2>Echtes Essen. Keine Kompromisse.</h2>
+      <p class="lead">Wir kochen so, wie wir auch zu Hause für unsere eigenen Kinder kochen würden — frisch, ehrlich und mit guten Zutaten aus der Region.</p>
+    </div>
 
-          <div class="zahlen-karten reveal">
-            <div class="zahl-karte">
-              <span class="zahl-wert">5</span>
-              <span class="zahl-text">Einrichtungen<br>täglich beliefert</span>
-            </div>
-            <div class="zahl-karte">
-              <span class="zahl-wert">Mo–Fr</span>
-              <span class="zahl-text">11:00 – 13:30 Uhr<br>warm serviert</span>
-            </div>
-            <div class="zahl-karte">
-              <span class="zahl-wert">ab 3,00 €</span>
-              <span class="zahl-text">fester Tagespreis<br>ein Preis pro Tag</span>
-            </div>
-          </div>
+    <div class="features">
+      <div class="feature reveal d1">
+        <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a0 0 0 0 1 0 0 8 8 0 0 1-8 8H12a8 8 0 0 1-8-8Z"/><path d="M2 19h20"/><path d="M9 4c0 1-1 1-1 2s1 1 1 2M13 3c0 1-1 1-1 2s1 1 1 2M17 4c0 1-1 1-1 2s1 1 1 2"/></svg></span>
+        <h3>Jeden Tag frisch</h3>
+        <p>Wir kochen jeden Morgen in unserer eigenen Küche. Nichts aus der Tüte, nichts von gestern — sondern warmes Essen, das zur Mittagszeit fertig ist.</p>
+      </div>
+      <div class="feature reveal d2">
+        <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6 3-11 9-12-1 7-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/><path d="M12 21v-7"/></svg></span>
+        <h3>Regional &amp; saisonal</h3>
+        <p>Kartoffeln vom Hof nebenan, Gemüse aus der Oberlausitz. Wir wissen, wo unsere Zutaten herkommen — und kochen mit dem, was die Jahreszeit gibt.</p>
+      </div>
+      <div class="feature reveal d3">
+        <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 15.6 12 20 12 20Z"/></svg></span>
+        <h3>Kindgerecht &amp; ausgewogen</h3>
+        <p>Bunt, abwechslungsreich und kindgerecht gewürzt — abgestimmt mit Schulen und Kitas. Allergien und Unverträglichkeiten haben wir immer im Blick.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <p>
-            Wir kochen, was uns selbst schmeckt: <strong>handfest, hausgemacht, ohne Schnickschnack.</strong>
-            Was nicht aus der Region kommt, kaufen wir mit Bedacht. Was möglich ist, machen wir selbst.
-          </p>
-
-          <h3 class="einrichtungen-headline">Wir kochen täglich für diese Einrichtungen</h3>
-          <div class="einrichtungen-grid reveal">
-            <div class="einrichtung-karte">
-              <span class="einrichtung-typ">Grundschule</span>
-              <span class="einrichtung-name">Grundschule Markersdorf</span>
-              <span class="einrichtung-ort">Kirchstraße 49 · Markersdorf</span>
-            </div>
-            <div class="einrichtung-karte">
-              <span class="einrichtung-typ">Kindergarten</span>
-              <span class="einrichtung-name">Kinderhaus „Wirbelwind"</span>
-              <span class="einrichtung-ort">Markersdorf</span>
-            </div>
-            <div class="einrichtung-karte">
-              <span class="einrichtung-typ">Kindergarten</span>
-              <span class="einrichtung-name">Kinderhaus „Villa Kunterbunt"</span>
-              <span class="einrichtung-ort">Friedersdorf</span>
-            </div>
-            <div class="einrichtung-karte">
-              <span class="einrichtung-typ">Kindergarten</span>
-              <span class="einrichtung-name">Kinderhaus „Berggeister"</span>
-              <span class="einrichtung-ort">Jauernick-Buschbach</span>
-            </div>
-            <div class="einrichtung-karte">
-              <span class="einrichtung-typ">Kita</span>
-              <span class="einrichtung-name">Ev. Kita-Haus Lutherkirche</span>
-              <span class="einrichtung-ort">Görlitz</span>
-            </div>
-          </div>
-
-          <p class="ueber-abschluss">
-            Mittagessen Mo–Fr von 11:00 bis 13:30, fester Tagespreis — egal welches Gericht.
-            Für Catering-Anfragen sind wir auch da.
-          </p>
-          <a href="kontakt.html" class="btn btn-outline">Zum Kontakt</a>
+<!-- ============================================================
+     BÜHNE · Kücheneinblick (großes Foto)
+     ============================================================ -->
+<section class="section beige">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-media reveal">
+        <div class="photo ratio-4-3">
+          <img src="assets/bilder/story-02.jpg" alt="In unserer Küche wird frisch gekocht — bunter Gemüseeintopf im großen Topf" loading="lazy" />
+        </div>
+      </div>
+      <div class="split-copy reveal d1">
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Unsere Küche</span>
+        <h2>Bei uns wird noch selbst gekocht.</h2>
+        <p class="lead">Morgens um sechs gehen bei uns die Töpfe an. Katrin Lange und ihr Team schälen, schnippeln und rühren — damit mittags in jeder Einrichtung ein frisches, warmes Essen auf dem Tisch steht.</p>
+        <p>Wir kochen mit Augenmaß und Erfahrung: kindgerechte Portionen, kräftige sächsische Klassiker und immer eine vegetarische Alternative dazu.</p>
+        <div class="split-actions">
+          <a class="btn btn-primary" href="galerie.html">Zur Galerie</a>
+          <a class="btn btn-ghost" href="stories.html">Unsere Geschichte</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- --- GALERIE-PREVIEW --- -->
-  <section class="galerie-preview">
-    <div class="container zentriert">
-      <span class="eyebrow reveal">Aus unserer Küche</span>
-      <h2 class="reveal">Was bei uns auf den <em>Teller</em> kommt.</h2>
-      <hr class="divider zentriert reveal">
-
-      <div class="galerie-preview-grid reveal">
-        <a href="galerie.html" class="karte" aria-label="Galerie ansehen">
-          <div class="bild-slot ratio-1-1 zoom-hover">
-            <div class="platzhalter" aria-hidden="true">
-              <span class="ph-emoji">🥗</span>
-            </div>
-            <img src="assets/bilder/galerie-01.jpg" alt="Eindruck aus der Galerie" loading="lazy" onerror="this.remove();">
-          </div>
-        </a>
-        <a href="galerie.html" class="karte" aria-label="Galerie ansehen">
-          <div class="bild-slot ratio-1-1 zoom-hover">
-            <div class="platzhalter" aria-hidden="true">
-              <span class="ph-emoji">🥩</span>
-            </div>
-            <img src="assets/bilder/galerie-02.jpg" alt="Eindruck aus der Galerie" loading="lazy" onerror="this.remove();">
-          </div>
-        </a>
-        <a href="galerie.html" class="karte" aria-label="Galerie ansehen">
-          <div class="bild-slot ratio-1-1 zoom-hover">
-            <div class="platzhalter" aria-hidden="true">
-              <span class="ph-emoji">🥘</span>
-            </div>
-            <img src="assets/bilder/galerie-03.jpg" alt="Eindruck aus der Galerie" loading="lazy" onerror="this.remove();">
-          </div>
-        </a>
-        <a href="galerie.html" class="karte" aria-label="Galerie ansehen">
-          <div class="bild-slot ratio-1-1 zoom-hover">
-            <div class="platzhalter" aria-hidden="true">
-              <span class="ph-emoji">🍰</span>
-            </div>
-            <img src="assets/bilder/galerie-04.jpg" alt="Eindruck aus der Galerie" loading="lazy" onerror="this.remove();">
-          </div>
-        </a>
-      </div>
-
-      <p style="margin-top:3rem;">
-        <a href="galerie.html" class="btn btn-outline">Alle Fotos ansehen</a>
-      </p>
+<!-- ============================================================
+     BÜHNE · Speiseplan-Teaser
+     ============================================================ -->
+<section class="section sage">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg> Speiseplan</span>
+      <h2>Diese Woche bei uns auf dem Teller.</h2>
+      <p class="lead">Jeden Tag zwei Gerichte zur Wahl — eines davon immer vegetarisch. Den vollständigen Plan findest du auf der Speiseplan-Seite und jederzeit in der Eltern-App.</p>
     </div>
-  </section>
 
-  <!-- --- CTA --- -->
-  <section class="cta">
-    <div class="container">
-      <span class="eyebrow">Für Eltern &amp; Einrichtungen</span>
-      <h2>Kind anmelden, Speiseplan ansehen — wir machen den <em>Rest.</em></h2>
-      <hr class="divider zentriert">
-      <p class="lead">
-        Bereits Kunde? Über die <strong>Eltern-App</strong> kannst du dein Kind ab- oder anmelden, den Speiseplan einsehen und deine Rechnung abrufen — bequem von zuhause.
-        Neue Familien melden sich einfach per Kontaktformular oder Anruf.
-      </p>
-      <div class="hero-buttons">
-        <!-- TODO: URL anpassen, sobald die Eltern-App live ist -->
-        <a href="https://eltern.schulkueche-markersdorf.de/" class="btn btn-light">Zur Eltern-App</a>
-        <a href="kontakt.html" class="btn btn-light">Zum Kontakt</a>
-        <a href="speisekarte.html" class="btn btn-light">Speiseplan ansehen</a>
+    <div class="menu-grid">
+      <div class="menu-day reveal d1">
+        <div class="dh"><b>Montag</b><span class="date">23.06.</span></div>
+        <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Sächsische Kartoffelsuppe</div><div class="meal-desc">mit Wiener Würstchen &amp; frischem Brot</div></div>
+        <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Gemüsemaultaschen</div><div class="meal-desc">in heller Soße · vegetarisch</div></div>
+      </div>
+      <div class="menu-day reveal d2">
+        <div class="dh"><b>Dienstag</b><span class="date">24.06.</span></div>
+        <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Spaghetti Bolognese</div><div class="meal-desc">mit Rinderhack &amp; geriebenem Käse</div></div>
+        <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Spaghetti Napoli</div><div class="meal-desc">fruchtige Tomatensoße · vegetarisch</div></div>
+      </div>
+      <div class="menu-day reveal d3">
+        <div class="dh"><b>Mittwoch</b><span class="date">25.06.</span></div>
+        <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Sauerbraten</div><div class="meal-desc">mit Klößen &amp; Apfelrotkohl</div></div>
+        <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Kartoffelgratin</div><div class="meal-desc">mit Brokkoli · vegetarisch</div></div>
+      </div>
+      <div class="menu-day reveal d4">
+        <div class="dh"><b>Donnerstag</b><span class="date">26.06.</span></div>
+        <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Hähnchenschnitzel</div><div class="meal-desc">mit Erbsen, Möhren &amp; Salzkartoffeln</div></div>
+        <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Milchreis</div><div class="meal-desc">mit warmem Apfelmus &amp; Zimt</div></div>
+      </div>
+      <div class="menu-day reveal d4">
+        <div class="dh"><b>Freitag</b><span class="date">27.06.</span></div>
+        <div class="meal"><span class="meal-tag">Essen 1</span><div class="meal-name">Quarkkäulchen</div><div class="meal-desc">mit Apfelmus — frisch gebacken</div></div>
+        <div class="meal"><span class="meal-tag t2">Essen 2</span><div class="meal-name">Fischstäbchen</div><div class="meal-desc">mit Kartoffelpüree &amp; Gurkensalat</div></div>
       </div>
     </div>
-  </section>
-  </main>
 
-  <!-- --- FOOTER --- -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-logo">Schulküche <span>Markersdorf</span></div>
-          <p style="font-size:0.92rem; line-height:1.7;">
-            Frisch gekocht für Schule, Kindergarten und Krippe.
-          </p>
-        </div>
-        <div>
-          <h4>Seiten</h4>
-          <ul>
-            <li><a href="index.html">Start</a></li>
-            <li><a href="speisekarte.html">Speiseplan</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="stories.html">Stories</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Öffnungszeiten</h4>
-          <ul>
-            <li>Mo – Fr</li>
-            <li>11:00 – 13:30 Uhr</li>
-            <li style="margin-top:0.8rem; color:rgba(255,255,255,0.5);">Warme Küche bis 13:30</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Folge uns</h4>
-          <ul>
-            <li><a href="https://www.facebook.com/schulkuche.markersdorf.7" target="_blank" rel="noopener">Facebook ↗</a></li>
-            <li><a href="https://www.instagram.com/schulkueche_markersdorf/" target="_blank" rel="noopener">Instagram ↗</a></li>
-            <li><a href="mailto:schulkuechemarkersdorf@web.de">E-Mail</a></li>
-          </ul>
-        </div>
+    <div class="reveal d2" style="margin-top:42px;display:flex;justify-content:center">
+      <a class="btn btn-primary btn-lg" href="speisekarte.html">Kompletten Speiseplan ansehen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BÜHNE · Catering
+     ============================================================ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M5 12a7 7 0 0 1 14 0M3 16h18"/><path d="M9 5c0-1 .5-2 1.5-2"/></svg> Catering</span>
+      <h2>Auch für eure Feier frisch von uns.</h2>
+      <p class="lead">Wir kochen nicht nur für Schulen und Kitas — auch euer Fest versorgen wir gern. Ob Geburtstag, Firmenfeier oder Familienfest: Wir zaubern Buffets, belegte Platten, Fingerfood und Dessertvariationen frisch aus unserer Küche. Sagt uns, wofür — wir kümmern uns um den Rest.</p>
+    </div>
+
+    <div class="gallery" style="margin-top:8px">
+      <div class="photo ratio-3-2 g-half reveal">
+        <img src="assets/bilder/catering-01.jpg" alt="Reichhaltiges Buffet mit belegten Platten" loading="lazy" />
       </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Schulküche Markersdorf · Alle Rechte vorbehalten</span>
-        <span>
-          <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
-          <a href="datenschutz.html">Datenschutz</a>
-        </span>
+      <div class="photo ratio-3-2 g-half reveal d1">
+        <img src="assets/bilder/catering-04.jpg" alt="Liebevoll dekorierte Fingerfood-Platte" loading="lazy" />
+      </div>
+      <div class="photo ratio-3-2 g-half reveal d1">
+        <img src="assets/bilder/catering-03.jpg" alt="Bunte Gemüse-Sticks frisch portioniert" loading="lazy" />
+      </div>
+      <div class="photo ratio-3-2 g-half reveal d2">
+        <img src="assets/bilder/catering-02.jpg" alt="Süße Erdbeeren in Schokolade" loading="lazy" />
       </div>
     </div>
-  </footer>
 
-  <script src="assets/script.js"></script>
+    <div class="reveal d2" style="margin-top:42px;display:flex;justify-content:center">
+      <a class="btn btn-primary btn-lg" href="kontakt.html">Catering anfragen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
 
-  <!-- --- CHATBOT --- -->
-  <script>
-    window.SK_CHAT_CONFIG = {
-      workerUrl: 'https://schulkueche-chatbot.sven-lng19.workers.dev',
-      datenschutzUrl: 'datenschutz.html'
-    };
-  </script>
-  <script defer src="assets/chatbot.js"></script>
+<!-- ============================================================
+     BÜHNE · Eltern-App-CTA (Übergang zur App)
+     ============================================================ -->
+<section class="section forest appcta">
+  <div class="wrap">
+    <div class="appcta-copy reveal">
+      <span class="eyebrow" style="color:var(--apple-lt)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg> Eltern-App</span>
+      <h2>Alles dabei. Mit einem Tipp.</h2>
+      <p>Essen ab- und anmelden, den Speiseplan ansehen, die Abrechnung prüfen — die Eltern-App hast du immer in der Tasche. Schnell, übersichtlich und genau auf deine Kinder zugeschnitten.</p>
+      <ul class="applist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Krankes Kind in Sekunden abmelden</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Speiseplan für jedes Kind immer dabei</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Abrechnung jederzeit transparent im Blick</li>
+      </ul>
+      <div class="cta-actions">
+        <a class="btn btn-light btn-lg" href="https://eltern.schulküchemarkersdorf.de/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg> Zur Eltern-App</a>
+        <a class="btn btn-ghost btn-lg" href="kontakt.html" style="background:transparent;color:#fff;border-color:rgba(251,248,241,.4)">Zugang anfragen</a>
+      </div>
+    </div>
+
+    <!-- App-Mockup -->
+    <div class="phone reveal d2" aria-hidden="true">
+      <div class="phone-screen">
+        <div class="phone-top">
+          <span class="pa"><img src="assets/apple-centered.png" alt=""></span>
+          <span class="pt"><b>Schulküche Markersdorf</b><span>familie.mustermann@web.de</span></span>
+        </div>
+        <div class="phone-body">
+          <div class="p-tile">
+            <span class="pi ic-amber" style="background:var(--amber-bg);color:var(--amber)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span>
+            <span class="pl"><b>Essen ab-/anmelden</b><span>2 Tage diese Woche abgemeldet</span></span>
+          </div>
+          <div class="p-tile">
+            <span class="pi" style="background:var(--sage);color:var(--apple-dk)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+            <span class="pl"><b>Speiseplan</b><span>Heute: Spaghetti Bolognese</span></span>
+          </div>
+          <div class="p-tile">
+            <span class="pi" style="background:var(--blue-bg);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l4 4v16l-2.2-1.4L14.6 22l-2.6-1.6L9.4 22l-2.2-1.4L5 22V4a2 2 0 0 1 1-2z"/><path d="M9 8h7M9 12h7M9 16h4"/></svg></span>
+            <span class="pl"><b>Abrechnung Juni</b><span>Voraussichtlich · 23 Essen</span></span>
+            <span class="p-num">48,30 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="site.js"></script>
+<script>
+  window.SK_CHAT_CONFIG = {
+    workerUrl: "https://schulkueche-chatbot.sven-lng19.workers.dev",
+    datenschutzUrl: "datenschutz.html"
+  };
+</script>
+<script defer src="assets/chatbot.js"></script>
 </body>
 </html>
