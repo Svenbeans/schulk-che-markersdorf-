@@ -6,7 +6,7 @@
 (function(){
   "use strict";
 
-  var APP_URL = "https://eltern.schulküchemarkersdorf.de/";
+  var APP_URL = "https://eltern-app.xn--schulkchemarkersdorf-uec.de/";
 
   /* ---- Linien-Icons (viewBox 0 0 24 24, stroke currentColor) ---- */
   var I = {
