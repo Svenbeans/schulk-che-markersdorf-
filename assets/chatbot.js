@@ -23,12 +23,12 @@
       sessionKey: 'sk-chat-session-v1',
       historyKey: 'sk-chat-history-v1',
       greeting:
-        'Hallo! Ich bin die digitale Helferin der Schulküche. Frag mich gern nach Speisekarte, Öffnungszeiten oder bestell für morgen vor.',
+        'Hallo! Ich bin die digitale Helferin der Schulküche. Frag mich gern nach dem Speiseplan, den Zeiten oder wie das mit dem Ab- und Anmelden läuft.',
       quickReplies: [
-        { label: 'Speisekarte', text: 'Was habt ihr aktuell auf der Karte?' },
-        { label: 'Öffnungszeiten', text: 'Wann habt ihr offen?' },
-        { label: 'Vorbestellen', text: 'Ich möchte gern etwas vorbestellen.' },
-        { label: 'Catering anfragen', text: 'Ich bräuchte ein Angebot für Catering.' },
+        { label: 'Speiseplan', text: 'Was gibt es diese Woche zu essen?' },
+        { label: 'Zeiten', text: 'Wann gibt es bei euch Mittagessen?' },
+        { label: 'Essen abmelden', text: 'Wie melde ich mein Kind vom Essen ab?' },
+        { label: 'Catering', text: 'Ich hätte gern Catering für eine Feier.' },
       ],
     },
     window.SK_CHAT_CONFIG || {}
@@ -248,116 +248,6 @@
     });
   }
 
-  // -- Bestellungs-/Catering-Karten --------------------------------------------
-  function renderOrderCard(payload) {
-    const dishLis =
-      (payload.dishes || [])
-        .map((d) => `<li>${escape(d.quantity || 1)}× ${escape(d.name)}${d.note ? ` <em>(${escape(d.note)})</em>` : ''}</li>`)
-        .join('') || '<li><em>(keine)</em></li>';
-
-    const card = el('div', {
-      class: 'sk-card',
-      html: `
-        <h4>Deine Vorbestellung — bitte bestätigen</h4>
-        <dl>
-          <dt>Wann</dt><dd>${escape(payload.date)}${payload.time ? ' um ' + escape(payload.time) : ''}</dd>
-          <dt>Personen</dt><dd>${escape(payload.guests)}</dd>
-          <dt>Bestellung</dt><dd><ul>${dishLis}</ul></dd>
-          <dt>Name</dt><dd>${escape(payload.name)}</dd>
-          <dt>Telefon</dt><dd>${escape(payload.phone)}</dd>
-          ${payload.email ? `<dt>E-Mail</dt><dd>${escape(payload.email)}</dd>` : ''}
-          ${payload.notes ? `<dt>Hinweise</dt><dd>${escape(payload.notes)}</dd>` : ''}
-        </dl>
-      `,
-    });
-    const actions = el('div', { class: 'sk-card-actions' });
-    const confirmBtn = el(
-      'button',
-      {
-        class: 'sk-btn sk-btn-primary',
-        type: 'button',
-        onclick: () => submitOrder(payload, confirmBtn, cancelBtn),
-      },
-      'Passt — bestellen'
-    );
-    const cancelBtn = el(
-      'button',
-      {
-        class: 'sk-btn sk-btn-secondary',
-        type: 'button',
-        onclick: () => {
-          card.remove();
-          pushSystem('Bestellung verworfen — sag uns gern, was du ändern willst.');
-        },
-      },
-      'Ändern'
-    );
-    actions.appendChild(confirmBtn);
-    actions.appendChild(cancelBtn);
-    card.appendChild(actions);
-    body.appendChild(card);
-    scrollToBottom();
-    return card;
-  }
-
-  function renderCateringCard(payload) {
-    const card = el('div', {
-      class: 'sk-card',
-      html: `
-        <h4>Deine Catering-Anfrage — bitte bestätigen</h4>
-        <dl>
-          <dt>Anlass</dt><dd>${escape(payload.occasion)}</dd>
-          <dt>Wann</dt><dd>${escape(payload.date)}${payload.time ? ' um ' + escape(payload.time) : ''}</dd>
-          <dt>Personen</dt><dd>${escape(payload.guests)}</dd>
-          ${payload.cateringType ? `<dt>Art</dt><dd>${escape(payload.cateringType)}</dd>` : ''}
-          ${payload.dietaryNotes ? `<dt>Besonderheiten</dt><dd>${escape(payload.dietaryNotes)}</dd>` : ''}
-          ${payload.message ? `<dt>Nachricht</dt><dd>${escape(payload.message)}</dd>` : ''}
-          <dt>Name</dt><dd>${escape(payload.name)}</dd>
-          <dt>Telefon</dt><dd>${escape(payload.phone)}</dd>
-          ${payload.email ? `<dt>E-Mail</dt><dd>${escape(payload.email)}</dd>` : ''}
-        </dl>
-      `,
-    });
-    const actions = el('div', { class: 'sk-card-actions' });
-    const confirmBtn = el(
-      'button',
-      {
-        class: 'sk-btn sk-btn-primary',
-        type: 'button',
-        onclick: () => submitCatering(payload, confirmBtn, cancelBtn),
-      },
-      'Anfrage absenden'
-    );
-    const cancelBtn = el(
-      'button',
-      {
-        class: 'sk-btn sk-btn-secondary',
-        type: 'button',
-        onclick: () => {
-          card.remove();
-          pushSystem('Anfrage verworfen — sag uns gern, was du ändern willst.');
-        },
-      },
-      'Ändern'
-    );
-    actions.appendChild(confirmBtn);
-    actions.appendChild(cancelBtn);
-    card.appendChild(actions);
-    body.appendChild(card);
-    scrollToBottom();
-    return card;
-  }
-
-  function escape(s) {
-    if (s == null) return '';
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
   // -- Backend-Calls -----------------------------------------------------------
   async function fetchJson(path, payload) {
     const res = await fetch(CONFIG.workerUrl.replace(/\/$/, '') + path, {
@@ -394,14 +284,6 @@
       }
 
       if (data.reply) pushMessage('bot', data.reply);
-
-      if (data.toolCall) {
-        if (data.toolCall.name === 'submit_lunch_preorder') {
-          renderOrderCard(data.toolCall.input || {});
-        } else if (data.toolCall.name === 'submit_catering_request') {
-          renderCateringCard(data.toolCall.input || {});
-        }
-      }
     } catch (err) {
       typing.remove();
       pushMessage('bot', 'Ich erreiche unseren Server gerade nicht. Magst du es gleich nochmal probieren?');
@@ -409,63 +291,6 @@
       sending = false;
       sendBtn.disabled = false;
       input.focus();
-    }
-  }
-
-  async function submitOrder(payload, confirmBtn, cancelBtn) {
-    confirmBtn.disabled = true;
-    cancelBtn.disabled = true;
-    confirmBtn.textContent = 'Sende…';
-    try {
-      const { ok, data } = await fetchJson('/api/order', payload);
-      if (ok && data.ok) {
-        confirmBtn.textContent = '✓ Bestellt';
-        pushMessage('bot', data.message || 'Bestellung aufgenommen — danke!');
-        // Tool-Result an Claude zurückgeben, damit es im Verlauf bleibt
-        history.push({
-          role: 'user',
-          content: `(System: Bestellung bestätigt, Ticket ${data.ticketId})`,
-        });
-        saveHistory(history);
-      } else {
-        confirmBtn.disabled = false;
-        cancelBtn.disabled = false;
-        confirmBtn.textContent = 'Passt — bestellen';
-        pushMessage('bot', data.message || data.error || 'Da hat etwas nicht geklappt — probier es bitte nochmal.');
-      }
-    } catch (err) {
-      confirmBtn.disabled = false;
-      cancelBtn.disabled = false;
-      confirmBtn.textContent = 'Passt — bestellen';
-      pushMessage('bot', 'Verbindung zum Server hat geklemmt. Versuch es gleich nochmal.');
-    }
-  }
-
-  async function submitCatering(payload, confirmBtn, cancelBtn) {
-    confirmBtn.disabled = true;
-    cancelBtn.disabled = true;
-    confirmBtn.textContent = 'Sende…';
-    try {
-      const { ok, data } = await fetchJson('/api/catering', payload);
-      if (ok && data.ok) {
-        confirmBtn.textContent = '✓ Gesendet';
-        pushMessage('bot', data.message || 'Anfrage gesendet — wir melden uns!');
-        history.push({
-          role: 'user',
-          content: `(System: Catering-Anfrage bestätigt, Ticket ${data.ticketId})`,
-        });
-        saveHistory(history);
-      } else {
-        confirmBtn.disabled = false;
-        cancelBtn.disabled = false;
-        confirmBtn.textContent = 'Anfrage absenden';
-        pushMessage('bot', data.message || data.error || 'Da hat etwas nicht geklappt.');
-      }
-    } catch (err) {
-      confirmBtn.disabled = false;
-      cancelBtn.disabled = false;
-      confirmBtn.textContent = 'Anfrage absenden';
-      pushMessage('bot', 'Verbindung hat geklemmt. Versuch es gleich nochmal.');
     }
   }
 
