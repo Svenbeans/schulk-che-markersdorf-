@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Datenschutz · Schulküche Markersdorf</title>
 <meta name="robots" content="noindex" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=Fontdiner+Swanky&family=Spectral:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
 <link rel="stylesheet" href="site.css" />
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2715%27 fill=%27%2344583a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia,serif%27 font-size=%2718%27 font-weight=%27700%27 font-style=%27italic%27 text-anchor=%27middle%27 fill=%27%23bc9b62%27%3ES%3C/text%3E%3C/svg%3E" />
@@ -32,8 +30,11 @@
       <h2>1. Verantwortlich</h2>
       <p>Schulküche Markersdorf<br />Katrin Lange<br />Kirchstraße 49<br />02829 Markersdorf<br />Telefon: <a href="tel:+4935829139993">035829 139993</a><br />E-Mail: <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a></p>
 
-      <h2>2. Server-Logs beim Aufruf der Webseite</h2>
-      <p>Beim Besuch unserer Seite werden vom Hoster automatisch technische Daten verarbeitet (IP-Adresse, Datum, Uhrzeit, aufgerufene Seite, Browser). Diese Daten dienen ausschließlich dem sicheren Betrieb der Webseite und werden nach kurzer Zeit gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <h2>2. Hosting, Server-Logs und Schriftarten</h2>
+      <p>Unsere Webseite wird gehostet von <strong>Hostinger International Ltd.</strong>, 61 Lordou Vironos Street, 6023 Larnaca, Republik Zypern (EU). Hostinger verarbeitet die Daten in unserem Auftrag; mit Hostinger besteht ein Auftragsverarbeitungsvertrag. Mehr dazu in der <a href="https://www.hostinger.de/rechtliches/datenschutzrichtlinien" target="_blank" rel="noopener">Datenschutzerklärung von Hostinger</a>.</p>
+      <p>Beim Besuch unserer Seite werden dabei automatisch technische Daten verarbeitet (IP-Adresse, Datum, Uhrzeit, aufgerufene Seite, Browser). Diese Daten dienen ausschließlich dem sicheren Betrieb der Webseite und werden nach kurzer Zeit gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+      <p>Die auf dieser Seite verwendeten Schriftarten liegen auf unserem eigenen Server und werden von dort geladen. Es wird dabei <strong>keine Verbindung zu Google</strong> oder einem anderen externen Anbieter aufgebaut, deine IP-Adresse wird also nicht an Dritte übertragen.</p>
 
       <h2>3. Cookies</h2>
       <p>Wir setzen keine Tracking-Cookies und kein Web-Analyse-Tool ein. Der Chatbot speichert deinen Chatverlauf nur lokal in deinem Browser (sessionStorage), er ist nach Schließen des Tabs weg. Dein Einverständnis zum Chatbot wird in deinem Browser unter <code>localStorage</code> abgelegt (Schlüssel <code>sk-chat-consent-v1</code>), damit wir dich beim nächsten Besuch nicht nochmal fragen.</p>
@@ -46,28 +47,26 @@
       <ul>
         <li><strong>Chatverlauf:</strong> Wir speichern Anfragen und Antworten anonymisiert (ohne deine IP) für maximal 30 Tage. Sie helfen uns, den Bot besser zu machen.</li>
         <li><strong>IP-Hash:</strong> Damit wir Missbrauch (massenhafte Anfragen) verhindern, hashen wir deine IP zusammen mit dem heutigen Datum. Aus diesem Hash kann deine IP nicht wiederhergestellt werden.</li>
-        <li><strong>Bei einer Bestellung oder Catering-Anfrage:</strong> Name, Telefon, optional E-Mail, Datum, Personen, Wünsche. Diese Daten landen per E-Mail bei uns und zusätzlich in einer internen Tabelle (Google Sheet), damit wir nichts vergessen. Wir nutzen sie ausschließlich, um deine Anfrage zu bearbeiten.</li>
       </ul>
+      <p>Über den Chatbot kannst du <strong>nichts bestellen und keine Catering-Anfrage abschicken</strong>. Er beantwortet nur Fragen. Für Bestellungen und Catering meldest du dich direkt bei uns, siehe Abschnitt 5.</p>
 
       <h3>4.3 Wer bekommt was?</h3>
       <ul>
         <li><strong>Anthropic, USA</strong>: verarbeitet deine Nachricht, um eine Antwort zu generieren. <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Anthropic</a></li>
-        <li><strong>Cloudflare, USA/EU</strong>: hostet unsere Webseite und den Chat-Proxy. <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a></li>
-        <li><strong>Google, USA/EU</strong>: wenn du eine Bestellung oder Catering-Anfrage abschickst, wird der Eintrag zusätzlich in einem Google Sheet abgelegt. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a></li>
-        <li><strong>MailChannels, USA</strong>: versendet die Bestätigungs-E-Mails. <a href="https://www.mailchannels.com/privacy/" target="_blank" rel="noopener">Datenschutzerklärung von MailChannels</a></li>
+        <li><strong>Cloudflare, USA/EU</strong>: betreibt den Chat-Proxy, über den deine Nachricht an Anthropic weitergereicht wird. Cloudflare hostet unsere Webseite <em>nicht</em> (siehe Abschnitt 2). <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a></li>
       </ul>
 
       <h3>4.4 Rechtsgrundlage und Speicherdauer</h3>
       <ul>
         <li>Chatnutzung: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Klick auf „Einverstanden"), anonymisierte Logs max. 30 Tage.</li>
-        <li>Bestell-/Catering-Daten: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung / Vertragserfüllung), Speicherung so lange wie für die Geschäftsbeziehung nötig, höchstens 6 Monate nach Erledigung. Steuerlich relevante Daten gemäß HGB/AO länger.</li>
       </ul>
 
       <h3>4.5 Deine Rechte</h3>
-      <p>Du kannst jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung verlangen. Außerdem kannst du deine Einwilligung jederzeit widerrufen, schick uns dazu eine kurze E-Mail an <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a>. Bitte gib uns Ticket-Nummer oder ungefähres Datum mit, damit wir deinen Eintrag finden.</p>
+      <p>Du kannst jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung verlangen. Außerdem kannst du deine Einwilligung jederzeit widerrufen, schick uns dazu eine kurze E-Mail an <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a>. Bitte gib uns das ungefähre Datum deines Chats mit, damit wir deinen Eintrag finden.</p>
 
-      <h2>5. Kontaktformular</h2>
-      <p>Wenn du uns über das Kontaktformular schreibst, verarbeiten wir deine Angaben (Name, E-Mail, Nachricht), um dir zu antworten. Rechtsgrundlage: Art. 6 Abs. 1 lit. b/f DSGVO.</p>
+      <h2>5. Kontaktaufnahme</h2>
+      <p>Auf dieser Webseite gibt es <strong>kein Kontaktformular</strong>. Du erreichst uns per Telefon, E-Mail oder WhatsApp. Wenn du uns schreibst oder anrufst, verarbeiten wir die Angaben, die du uns dabei mitteilst (z. B. Name, Telefonnummer, E-Mail-Adresse, Inhalt deiner Nachricht), ausschließlich um deine Anfrage zu beantworten. Rechtsgrundlage: Art. 6 Abs. 1 lit. b bzw. f DSGVO. Wir bewahren die Nachricht so lange auf, wie es für die Bearbeitung nötig ist; steuerlich relevante Vorgänge unterliegen den gesetzlichen Aufbewahrungsfristen.</p>
+      <p><strong>Hinweis zu WhatsApp:</strong> Der WhatsApp-Button ist ein reiner Link. Erst wenn du ihn anklickst und uns dort schreibst, verarbeitet WhatsApp (Meta Platforms Ireland Ltd.) deine Nachricht und deine Telefonnummer nach den eigenen Bedingungen des Anbieters — darauf haben wir keinen Einfluss. Wenn du das nicht möchtest, nutze bitte Telefon oder E-Mail. <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">Datenschutzerklärung von WhatsApp</a></p>
 
       <h2>6. Externe Verlinkungen (Instagram, Facebook)</h2>
       <p>Unsere Galerie- und Story-Bilder sind direkt bei uns abgelegt, beim Aufruf der Webseite werden keine Daten an Instagram oder Facebook übertragen. Wenn du jedoch auf einen Story-Link, den „Auf Facebook folgen"- oder „Auf Instagram folgen"-Button klickst, wirst du zur jeweiligen Plattform weitergeleitet. Erst dann sieht die Plattform deine IP-Adresse und Browser-Daten. Mehr dazu in der <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener">Instagram-Datenschutzrichtlinie</a> bzw. der <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener">Facebook-Datenschutzrichtlinie</a>.</p>
@@ -76,9 +75,10 @@
       <p>Auf der Kontaktseite verlinken wir auf Google Maps, damit du uns schneller findest. Erst wenn du den Karten-Link anklickst, wirst du zu Google weitergeleitet; dabei erhält Google deine IP-Adresse und ggf. weitere technische Daten. Wir haben darauf keinen Einfluss. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer leicht auffindbaren Anfahrt). Mehr dazu in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
 
       <h2>8. Beschwerderecht</h2>
-      <p>Wenn du der Meinung bist, dass wir deine Daten unrechtmäßig verarbeiten, kannst du dich bei der zuständigen Aufsichtsbehörde beschweren.</p>
+      <p>Wenn du der Meinung bist, dass wir deine Daten unrechtmäßig verarbeiten, kannst du dich bei der für uns zuständigen Aufsichtsbehörde beschweren:</p>
+      <p>Sächsische Datenschutz- und Transparenzbeauftragte<br />Maternistraße 17<br />01067 Dresden<br />Postanschrift: Postfach 11 01 32, 01330 Dresden<br />Telefon: <a href="tel:+4935185471101">0351 85471-101</a><br />E-Mail: <a href="mailto:post@sdtb.sachsen.de">post@sdtb.sachsen.de</a></p>
 
-      <p style="margin-top:32px;color:var(--muted-lt);font-size:14px">Stand: Mai 2026 · Diese Erklärung wird laufend aktualisiert.</p>
+      <p style="margin-top:32px;color:var(--muted-lt);font-size:14px">Stand: August 2026 · Diese Erklärung wird laufend aktualisiert.</p>
     </div>
   </div>
 </section>
