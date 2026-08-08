@@ -218,7 +218,7 @@
       if(/preis|kost|teuer|euro|geld/.test(t))
         return 'Pro Mittagessen: Kinderkrippe 3,00&nbsp;€, Kindergarten 3,30&nbsp;€, Schule 4,20&nbsp;€, Erwachsene 5,80&nbsp;€. Mehr dazu auf der <a href="speisekarte.html">Speiseplan-Seite</a>.';
       if(/anmeld|abmeld|krank|app/.test(t))
-        return 'An- und Abmeldungen erledigst du in der <a href="'+APP_URL+'">Eltern-App</a> — bis 7:30 Uhr am selben Tag.';
+        return 'An- und Abmeldungen erledigst du in der <a href="'+APP_URL+'">Eltern-App</a> — bis 7:00 Uhr am selben Tag.';
       if(/allerg|unvertr|vegan|vegetar/.test(t))
         return 'Allergien und Unverträglichkeiten hinterlegst du einmal in der Eltern-App, wir berücksichtigen sie bei jeder Bestellung. Es gibt täglich auch eine vegetarische Wahl.';
       if(/kontakt|telefon|anruf|erreich|mail|adresse/.test(t))
