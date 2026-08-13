@@ -44,7 +44,7 @@
       '<div class="wrap">' +
         '<a class="brand" href="index.html" aria-label="Schulküche Markersdorf — Startseite">' +
           '<span class="brand-mark"><img src="assets/bilder/schulkueche-logo.png" alt=""></span>' +
-          '<span class="brand-name"><b>Schulküche Markersdorf</b><span>Frisch · Regional · Für Kinder</span></span>' +
+          '<span class="brand-name"><b>Schulküche Markersdorf</b><span>Frisch Regional Für Kinder</span></span>' +
         '</a>' +
         '<nav class="nav" aria-label="Hauptnavigation">' +
           NAV.map(function(n){
@@ -88,7 +88,7 @@
           '<div class="f-brand">' +
             '<div class="brand">' +
               '<span class="brand-mark"><img src="assets/bilder/schulkueche-logo.png" alt=""></span>' +
-              '<span class="brand-name"><b>Schulküche Markersdorf</b><span style="color:var(--apple-lt)">Frisch · Regional</span></span>' +
+              '<span class="brand-name"><b>Schulküche Markersdorf</b><span style="color:var(--apple-lt)">Frisch Regional</span></span>' +
             '</div>' +
             '<p>Frisch gekochtes Mittagessen für Schulen und Kindergärten in und um Markersdorf — jeden Tag mit Liebe zubereitet.</p>' +
           '</div>' +
