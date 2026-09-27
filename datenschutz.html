@@ -37,7 +37,7 @@
       <p>Die auf dieser Seite verwendeten Schriftarten liegen auf unserem eigenen Server und werden von dort geladen. Es wird dabei <strong>keine Verbindung zu Google</strong> oder einem anderen externen Anbieter aufgebaut, deine IP-Adresse wird also nicht an Dritte übertragen.</p>
 
       <h2>3. Cookies</h2>
-      <p>Wir setzen keine Tracking-Cookies und kein Web-Analyse-Tool ein. Der Chatbot speichert deinen Chatverlauf nur lokal in deinem Browser (sessionStorage), er ist nach Schließen des Tabs weg. Dein Einverständnis zum Chatbot wird in deinem Browser unter <code>localStorage</code> abgelegt (Schlüssel <code>sk-chat-consent-v1</code>), damit wir dich beim nächsten Besuch nicht nochmal fragen.</p>
+      <p>Wir setzen keine Tracking-Cookies und kein Web-Analyse-Tool ein. Der Chatbot speichert deinen Chatverlauf nur lokal in deinem Browser (sessionStorage), er ist nach Schließen des Tabs weg. Deine Einwilligung zum Chatbot wird in deinem Browser unter <code>localStorage</code> abgelegt (Schlüssel <code>sk-chat-consent-v2</code>, mit Zeitstempel), damit wir dich nicht bei jedem Besuch neu fragen. Diese Einwilligung gilt 6 Monate, danach fragen wir erneut. Du kannst sie jederzeit über den Knopf „Einwilligung widerrufen &amp; Chat löschen" im Chatfenster zurückziehen.</p>
 
       <h2>4. Chatbot (KI-gestützt)</h2>
       <h3>4.1 Was passiert beim Chat?</h3>
@@ -45,8 +45,9 @@
 
       <h3>4.2 Welche Daten wir speichern</h3>
       <ul>
-        <li><strong>Chatverlauf:</strong> Wir speichern Anfragen und Antworten anonymisiert (ohne deine IP) für maximal 30 Tage. Sie helfen uns, den Bot besser zu machen.</li>
-        <li><strong>IP-Hash:</strong> Damit wir Missbrauch (massenhafte Anfragen) verhindern, hashen wir deine IP zusammen mit dem heutigen Datum. Aus diesem Hash kann deine IP nicht wiederhergestellt werden.</li>
+        <li><strong>Chatnutzung (notwendig):</strong> Ohne diese Einwilligung funktioniert der Chat nicht — deine Nachricht muss an Anthropic geschickt werden, damit du eine Antwort bekommst.</li>
+        <li><strong>Protokoll zur Verbesserung (freiwillig, eigenes Häkchen):</strong> Nur wenn du das zusätzlich erlaubst, speichern wir Anfrage und Antwort pseudonymisiert (ohne Klarnamen-Zuordnung) für maximal 30 Tage, um den Bot besser zu machen. Lehnst du das ab, wird nichts von deinem Gespräch bei uns gespeichert.</li>
+        <li><strong>IP-Hash (nur fürs Anfragelimit):</strong> Damit wir Missbrauch (massenhafte Anfragen) verhindern, hashen wir deine IP pseudonymisiert mit einem geheimen Schlüssel, der nur uns bekannt ist. Aus diesem Hash kann deine IP nicht zurückgerechnet werden; er wird nur kurz für das Anfragelimit verwendet.</li>
       </ul>
       <p>Über den Chatbot kannst du <strong>nichts bestellen und keine Catering-Anfrage abschicken</strong>. Er beantwortet nur Fragen. Für Bestellungen und Catering meldest du dich direkt bei uns, siehe Abschnitt 5.</p>
 
@@ -58,11 +59,12 @@
 
       <h3>4.4 Rechtsgrundlage und Speicherdauer</h3>
       <ul>
-        <li>Chatnutzung: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Klick auf „Einverstanden"), anonymisierte Logs max. 30 Tage.</li>
+        <li>Chatnutzung: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Klick auf „Einverstanden — Chat öffnen"), gültig 6 Monate.</li>
+        <li>Protokoll zur Verbesserung: eigene, freiwillige Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), pseudonymisierte Logs max. 30 Tage.</li>
       </ul>
 
       <h3>4.5 Deine Rechte</h3>
-      <p>Du kannst jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung verlangen. Außerdem kannst du deine Einwilligung jederzeit widerrufen, schick uns dazu eine kurze E-Mail an <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a>. Bitte gib uns das ungefähre Datum deines Chats mit, damit wir deinen Eintrag finden.</p>
+      <p>Du kannst jederzeit Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung verlangen. Deine Chat-Einwilligung kannst du direkt im Chatfenster über den Knopf „Einwilligung widerrufen &amp; Chat löschen" zurückziehen — damit ist auch dein lokaler Chatverlauf gelöscht. Für ein eventuell gespeichertes Protokoll (siehe 4.2) schreib uns eine kurze E-Mail an <a href="mailto:schulkuechemarkersdorf@web.de">schulkuechemarkersdorf@web.de</a> mit dem ungefähren Datum deines Chats.</p>
 
       <h2>5. Kontaktaufnahme</h2>
       <p>Auf dieser Webseite gibt es <strong>kein Kontaktformular</strong>. Du erreichst uns per Telefon, E-Mail oder WhatsApp. Wenn du uns schreibst oder anrufst, verarbeiten wir die Angaben, die du uns dabei mitteilst (z. B. Name, Telefonnummer, E-Mail-Adresse, Inhalt deiner Nachricht), ausschließlich um deine Anfrage zu beantworten. Rechtsgrundlage: Art. 6 Abs. 1 lit. b bzw. f DSGVO. Wir bewahren die Nachricht so lange auf, wie es für die Bearbeitung nötig ist; steuerlich relevante Vorgänge unterliegen den gesetzlichen Aufbewahrungsfristen.</p>
@@ -78,7 +80,7 @@
       <p>Wenn du der Meinung bist, dass wir deine Daten unrechtmäßig verarbeiten, kannst du dich bei der für uns zuständigen Aufsichtsbehörde beschweren:</p>
       <p>Sächsische Datenschutz- und Transparenzbeauftragte<br />Maternistraße 17<br />01067 Dresden<br />Postanschrift: Postfach 11 01 32, 01330 Dresden<br />Telefon: <a href="tel:+4935185471101">0351 85471-101</a><br />E-Mail: <a href="mailto:post@sdtb.sachsen.de">post@sdtb.sachsen.de</a></p>
 
-      <p style="margin-top:32px;color:var(--muted-lt);font-size:14px">Stand: August 2026 · Diese Erklärung wird laufend aktualisiert.</p>
+      <p style="margin-top:32px;color:var(--muted-lt);font-size:14px">Stand: 26.09.2026 · Diese Erklärung wird laufend aktualisiert.</p>
     </div>
   </div>
 </section>

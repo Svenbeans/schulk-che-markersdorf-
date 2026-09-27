@@ -19,9 +19,16 @@
     {
       workerUrl: 'http://localhost:8787', // im Live-Betrieb überschreiben
       datenschutzUrl: 'datenschutz.html',
-      consentKey: 'sk-chat-consent-v1',
+      consentKey: 'sk-chat-consent-v2',
       sessionKey: 'sk-chat-session-v1',
       historyKey: 'sk-chat-history-v1',
+      // S9/Q4: Version des Zustimmungstexts -- bei inhaltlicher Änderung erhöhen, damit
+      // alte Zustimmungen nicht stillschweigend weitergelten.
+      consentVersion: '2026-09-26',
+      // S9/Q4: Zustimmung gilt 6 Monate.
+      consentValidityMs: 1000 * 60 * 60 * 24 * 30 * 6,
+      whatsappUrl: 'https://wa.me/4935829139993',
+      contactEmail: 'schulkuechemarkersdorf@web.de',
       greeting:
         'Hallo! Ich bin die digitale Helferin der Schulküche. Frag mich gern nach dem Speiseplan, den Zeiten oder wie das mit dem Ab- und Anmelden läuft.',
       quickReplies: [
@@ -33,6 +40,9 @@
     },
     window.SK_CHAT_CONFIG || {}
   );
+
+  // Q6: Client-Timeout fürs Warten auf die Antwort.
+  const CLIENT_TIMEOUT_MS = 25_000;
 
   // -- Hilfs-Funktionen --------------------------------------------------------
   function el(tag, attrs = {}, ...kids) {
@@ -75,6 +85,50 @@
     try {
       sessionStorage.setItem(CONFIG.historyKey, JSON.stringify(hist.slice(-30)));
     } catch {}
+  }
+
+  // -- Consent-Speicher ----------------------------------------------------------
+  // S9/Q4: Zustimmung mit Zeitstempel + Version, 6 Monate gültig. Zwei getrennte
+  // Häkchen: Chat (notwendig) und Protokoll zur Verbesserung (freiwillig, 30 Tage).
+  function loadConsent() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(CONFIG.consentKey) || 'null');
+      if (!raw || raw.chat !== true || typeof raw.ts !== 'number') return null;
+      return raw;
+    } catch {
+      return null;
+    }
+  }
+
+  function consentIsValid(consent) {
+    if (!consent) return false;
+    if (consent.version !== CONFIG.consentVersion) return false;
+    const age = Date.now() - consent.ts;
+    return age >= 0 && age <= CONFIG.consentValidityMs;
+  }
+
+  function saveConsent(logAllowed) {
+    const consent = { chat: true, log: Boolean(logAllowed), version: CONFIG.consentVersion, ts: Date.now() };
+    try {
+      localStorage.setItem(CONFIG.consentKey, JSON.stringify(consent));
+    } catch {}
+    return consent;
+  }
+
+  function clearConsent() {
+    try {
+      localStorage.removeItem(CONFIG.consentKey);
+    } catch {}
+  }
+
+  function clearChatState() {
+    try {
+      sessionStorage.removeItem(CONFIG.historyKey);
+      sessionStorage.removeItem(CONFIG.sessionKey);
+    } catch {}
+    history = [];
+    body.innerHTML = '';
+    started = false;
   }
 
   // -- DOM-Aufbau --------------------------------------------------------------
@@ -132,8 +186,8 @@
   const input = el('textarea', {
     class: 'sk-chat-input',
     rows: '1',
-    placeholder: 'Schreib uns…',
-    'aria-label': 'Deine Nachricht',
+    placeholder: 'Schreib uns… (bitte keine Namen oder Gesundheitsdaten eingeben)',
+    'aria-label': 'Deine Nachricht (bitte keine Namen oder Gesundheitsdaten eingeben)',
     maxlength: '2000',
   });
 
@@ -162,11 +216,26 @@
     sendBtn
   );
 
+  const revokeBtn = el(
+    'button',
+    {
+      class: 'sk-chat-revoke',
+      type: 'button',
+      onclick: () => revokeConsent(),
+    },
+    'Einwilligung widerrufen & Chat löschen'
+  );
+
   const foot = el(
     'div',
     { class: 'sk-chat-foot' },
-    'Chat wird KI-gestützt beantwortet · ',
-    el('a', { href: CONFIG.datenschutzUrl, target: '_blank', rel: 'noopener' }, 'Datenschutz')
+    el(
+      'div',
+      {},
+      'Chat wird KI-gestützt beantwortet · ',
+      el('a', { href: CONFIG.datenschutzUrl, target: '_blank', rel: 'noopener' }, 'Datenschutz')
+    ),
+    revokeBtn
   );
 
   const win = el(
@@ -191,6 +260,25 @@
   // -- State -------------------------------------------------------------------
   let history = loadHistory();
   let sending = false;
+  let started = false;
+  let activeConsent = null;
+
+  // -- Eingabe sperren/entsperren (S9: bis zur Zustimmung inert) ----------------
+  function lockChatInput() {
+    input.setAttribute('disabled', '');
+    sendBtn.setAttribute('disabled', '');
+    try {
+      form.setAttribute('inert', '');
+      chipsBar.setAttribute('inert', '');
+    } catch {}
+  }
+  function unlockChatInput() {
+    input.removeAttribute('disabled');
+    sendBtn.removeAttribute('disabled');
+    form.removeAttribute('inert');
+    chipsBar.removeAttribute('inert');
+  }
+  lockChatInput();
 
   // -- Nachrichten-Rendering ---------------------------------------------------
   function pushMessage(role, content, opts = {}) {
@@ -250,19 +338,31 @@
 
   // -- Backend-Calls -----------------------------------------------------------
   async function fetchJson(path, payload) {
-    const res = await fetch(CONFIG.workerUrl.replace(/\/$/, '') + path, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-    const ct = res.headers.get('Content-Type') || '';
-    const data = ct.includes('application/json') ? await res.json() : { ok: false, error: await res.text() };
-    return { ok: res.ok, status: res.status, data };
+    const controller = new AbortController();
+    // Q6: Client-Timeout -- hängt der Request, bricht er nach CLIENT_TIMEOUT_MS ab.
+    const timeout = setTimeout(() => controller.abort(), CLIENT_TIMEOUT_MS);
+    try {
+      const res = await fetch(CONFIG.workerUrl.replace(/\/$/, '') + path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+      const ct = res.headers.get('Content-Type') || '';
+      const data = ct.includes('application/json') ? await res.json() : { ok: false, error: await res.text() };
+      return { ok: res.ok, status: res.status, data };
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
   async function sendUserMessage(text) {
     text = (text || '').trim();
     if (!text || sending) return;
+    if (!consentIsValid(activeConsent)) {
+      showConsentIfNeeded();
+      return;
+    }
     input.value = '';
     chipsBar.innerHTML = '';
     sending = true;
@@ -275,10 +375,23 @@
       const { ok, data } = await fetchJson('/api/chat', {
         sessionId: sessionId(),
         messages: history,
+        consent: {
+          chat: true,
+          log: Boolean(activeConsent.log),
+          version: activeConsent.version,
+          ts: activeConsent.ts,
+        },
       });
       typing.remove();
 
       if (!ok) {
+        if (data.error === 'consent_required') {
+          clearConsent();
+          activeConsent = null;
+          lockChatInput();
+          showConsentIfNeeded();
+          return;
+        }
         pushMessage('bot', data.message || 'Uff, da ist was schiefgegangen — versuch es bitte nochmal oder ruf uns kurz an.');
         return;
       }
@@ -286,7 +399,11 @@
       if (data.reply) pushMessage('bot', data.reply);
     } catch (err) {
       typing.remove();
-      pushMessage('bot', 'Ich erreiche unseren Server gerade nicht. Magst du es gleich nochmal probieren?');
+      if (err && err.name === 'AbortError') {
+        pushMessage('bot', 'Das hat zu lange gedauert – bitte nochmal versuchen.');
+      } else {
+        pushMessage('bot', 'Ich erreiche unseren Server gerade nicht. Magst du es gleich nochmal probieren?');
+      }
     } finally {
       sending = false;
       sendBtn.disabled = false;
@@ -294,33 +411,71 @@
     }
   }
 
+  // -- Kontaktwege bei Ablehnung -------------------------------------------------
+  function renderKontaktwege() {
+    return el(
+      'div',
+      { class: 'sk-kontaktwege' },
+      el('p', {}, 'Kein Problem — dann erreichst du uns direkt:'),
+      el(
+        'ul',
+        {},
+        el('li', {}, el('a', { href: CONFIG.whatsappUrl, target: '_blank', rel: 'noopener' }, 'WhatsApp')),
+        el('li', {}, el('a', { href: `mailto:${CONFIG.contactEmail}` }, CONFIG.contactEmail))
+      )
+    );
+  }
+
   // -- Consent-Overlay (DSGVO) -------------------------------------------------
+  // S9/Q4: Eingabe bleibt inert, solange der Dialog offen ist; Fokus bleibt im Dialog.
   function showConsentIfNeeded() {
-    if (localStorage.getItem(CONFIG.consentKey) === '1') return false;
+    activeConsent = loadConsent();
+    if (consentIsValid(activeConsent)) {
+      lockChatInput(); // wird gleich wieder freigegeben
+      unlockChatInput();
+      return false;
+    }
+
+    lockChatInput();
+    let logCheckbox;
+
     const overlay = el(
       'div',
-      { class: 'sk-consent' },
+      { class: 'sk-consent', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Zustimmung zum Chat' },
       el('div', {}, [
         el('h3', {}, 'Bevor wir loslegen'),
         el(
           'p',
           {},
-          'Unser Chatbot wird von einer KI (Claude von Anthropic) beantwortet. Damit wir den Bot verbessern können, speichern wir deine Nachrichten anonymisiert (ohne IP) für maximal 30 Tage. Mehr dazu in der ',
+          'Unser Chatbot wird von einer KI (Claude von Anthropic) beantwortet. Deine Nachricht wird dafür an Anthropic in die USA geschickt. Wir speichern deinen Chatverlauf nur in deinem Browser (sessionStorage), nicht bei uns. Mehr dazu in der ',
           el('a', { href: CONFIG.datenschutzUrl, target: '_blank', rel: 'noopener' }, 'Datenschutzerklärung'),
           '.'
         ),
         el(
+          'p',
+          { class: 'sk-consent-hinweis' },
+          'Bitte gib im Chat keine Namen (auch nicht die deines Kindes) oder Gesundheitsdaten ein.'
+        ),
+        el(
+          'label',
+          { class: 'sk-consent-checkbox' },
+          (logCheckbox = el('input', { type: 'checkbox' })),
+          ' Ich bin außerdem einverstanden, dass unser Gespräch pseudonymisiert 30 Tage zur Verbesserung des Bots gespeichert wird (freiwillig).'
+        ),
+        el(
           'div',
-          {},
+          { class: 'sk-consent-buttons' },
           el(
             'button',
             {
               class: 'sk-btn sk-btn-primary',
               type: 'button',
               onclick: () => {
-                localStorage.setItem(CONFIG.consentKey, '1');
+                activeConsent = saveConsent(logCheckbox.checked);
                 overlay.remove();
+                unlockChatInput();
                 startConversation();
+                input.focus();
               },
             },
             'Einverstanden — Chat öffnen'
@@ -331,7 +486,12 @@
               class: 'sk-btn sk-btn-secondary',
               type: 'button',
               onclick: () => {
-                closeChat();
+                overlay.remove();
+                body.innerHTML = '';
+                chipsBar.innerHTML = '';
+                pushSystem('Du hast dem Chat nicht zugestimmt. Der Chat bleibt geschlossen.');
+                body.appendChild(renderKontaktwege());
+                lockChatInput();
               },
             },
             'Lieber nicht'
@@ -339,8 +499,36 @@
         ),
       ])
     );
+
     win.appendChild(overlay);
+
+    // Fokus im Dialog halten (einfacher Tab-Trap zwischen Checkbox und den beiden Buttons).
+    const focusables = overlay.querySelectorAll('input, button');
+    if (focusables.length) focusables[0].focus();
+    overlay.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab' || focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
     return true;
+  }
+
+  // -- Widerruf ------------------------------------------------------------------
+  function revokeConsent() {
+    clearConsent();
+    activeConsent = null;
+    clearChatState();
+    closeChat();
+    pushSystem('Deine Einwilligung wurde widerrufen, der Chatverlauf ist gelöscht.');
+    lockChatInput();
   }
 
   // -- Open / Close ------------------------------------------------------------
@@ -349,7 +537,9 @@
     fab.setAttribute('aria-expanded', 'true');
     const consentShown = showConsentIfNeeded();
     if (!consentShown) startConversation();
-    setTimeout(() => input.focus(), 320);
+    setTimeout(() => {
+      if (!consentShown) input.focus();
+    }, 320);
   }
   function closeChat() {
     win.classList.remove('sk-offen');
@@ -366,7 +556,6 @@
   });
 
   // -- Erst-Konversation -------------------------------------------------------
-  let started = false;
   function startConversation() {
     if (started) return;
     started = true;

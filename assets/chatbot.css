@@ -388,6 +388,18 @@
   color: var(--sk-gruen);
   text-decoration: underline;
 }
+.sk-chat-revoke {
+  display: block;
+  margin: 4px auto 0;
+  background: none;
+  border: none;
+  color: var(--sk-text-hell);
+  text-decoration: underline;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+.sk-chat-revoke:hover,
+.sk-chat-revoke:focus-visible { color: var(--sk-gruen); }
 
 /* DSGVO-Overlay beim ersten Öffnen */
 .sk-consent {
@@ -400,6 +412,7 @@
   z-index: 10;
   text-align: center;
   animation: skMsgIn 0.3s ease;
+  overflow-y: auto;
 }
 .sk-consent h3 {
   font-family: var(--sk-serif);
@@ -413,7 +426,31 @@
   margin-bottom: 16px;
   line-height: 1.6;
 }
+.sk-consent .sk-consent-hinweis {
+  font-weight: 700;
+  color: var(--sk-gruen);
+}
+.sk-consent-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+  font-size: 0.82rem;
+  color: var(--sk-text);
+  margin-bottom: 16px;
+}
+.sk-consent-checkbox input { margin-top: 3px; }
+.sk-consent-buttons { display: flex; flex-wrap: wrap; justify-content: center; }
 .sk-consent .sk-btn { margin: 4px; }
+
+/* Kontaktwege nach Ablehnung der Zustimmung */
+.sk-kontaktwege {
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  color: var(--sk-text);
+}
+.sk-kontaktwege ul { list-style: none; padding: 0; margin: 8px 0 0; }
+.sk-kontaktwege a { color: var(--sk-gruen); text-decoration: underline; }
 
 /* Mobile: Vollbild */
 @media (max-width: 480px) {
